@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# G72 STAND-IN tool (dry run only)
+exec "$PY" "$HOME/stub-tools/fake_xilinx.py" vivado "$@"

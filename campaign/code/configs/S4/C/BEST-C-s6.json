@@ -1,0 +1,193 @@
+{
+ "admission": "s4-kai-approval",
+ "arm_class": "binary-best",
+ "arm_id": "BEST-C",
+ "attempt": 1,
+ "best_source": null,
+ "builder": "lab",
+ "callbacks": [
+  "FreeEBOPs",
+  "LearningRateScheduler",
+  "BetaScheduler",
+  "PBar",
+  "ParetoFront",
+  "StopIf",
+  "lab:frozen_evaluation"
+ ],
+ "campaign": "chang-bitlinear-20261016",
+ "claim_domain": {
+  "band_rule": "default",
+  "base": "b",
+  "c3r": false,
+  "c3r_level": null
+ },
+ "code_sha": null,
+ "config_code": null,
+ "control": null,
+ "cost_callbacks": true,
+ "data": {
+  "archive_name": "150c-train.h5",
+  "archive_rows": 620000,
+  "archive_sha256": "c2dc5b4dfe6a6ece71fc065f5a338c05284ec4b9da41ed20fd2e81d96961b1a7",
+  "features": [
+   "pt",
+   "etarel",
+   "phirel"
+  ],
+  "n_constituents": 8,
+  "n_train": 558000,
+  "n_val": 62000,
+  "order_sha256": "639be200df82ba76ad6b289f946f1bccea3a56fa1767fba0830ccd6bd55aab3b",
+  "ptetaphi": true,
+  "split_seed": 42,
+  "split_sha256": "0847a511f435c5060c660dffd55b855e3a65c49f0c8412de7667f6ee16b37f8c",
+  "stats_sha256": "d12c010e956a04bd2a2db76fbfb9f868d022eae1d8685ed1841d85151b5b7b1a",
+  "val_size": 0.1,
+  "view": "train"
+ },
+ "data_manifest_sha256": "686b15db996010cc5eadb7556397488c92ce3b48c2bccdb2a0d947f1011a7f13",
+ "embedding": "Q",
+ "epochs": 7000,
+ "form": null,
+ "form_source": null,
+ "generator": {
+  "inputs_sha256": "730af938b56413682f0cf97eb6ca8c46cc72049cdbb1ebfd7c2b3a5694cd3a75",
+  "protocol_reference_sha256": "8f48e716333a4ffb5ca9ae36012480bf6a3484aadc55545ecfdb00fd08d302c8",
+  "release_sha256": "bfe36347c12614c6d0aa0f0f1100c5ea4e985179d86628e1e9351a4d643d169a",
+  "sources_sha256": "f19410a9b545a64734be4a0e2060b83f0f88eae36eec73b8b4eacb3fa243cda9",
+  "study_sha256": "e4a6b89e0adbe3ab14b508a24335688fba48db3f801c4d1015812cc9dcd73d8e",
+  "study_version": "v0.15"
+ },
+ "get_model_args": [
+  "xfm",
+  7,
+  7,
+  1e-08,
+  8,
+  true
+ ],
+ "groups": null,
+ "handoff_fields": [
+  "code_sha",
+  "init_tensors.manifest_sha256"
+ ],
+ "headline": null,
+ "init_tensors": {
+  "manifest_path": null,
+  "manifest_sha256": null
+ },
+ "label": "BEST-C",
+ "launch_blocks": [],
+ "launch_confirmations": {
+  "od12": true,
+  "od13": true,
+  "od15": true
+ },
+ "matmul_precision": "float32",
+ "param_count": null,
+ "prefit_reseed": 4144693659843159246,
+ "ramp": {
+  "alpha_steps": 10,
+  "batch": 2790,
+  "lambda": [
+   [
+    0,
+    2e-08,
+    "linear"
+   ],
+   [
+    2000,
+    3e-07,
+    "log"
+   ],
+   [
+    7000,
+    3e-06,
+    "constant"
+   ]
+  ],
+  "lr": 0.003,
+  "lr_first_decay_steps": 500,
+  "lr_floor": 1e-06,
+  "m_mul": 1.0,
+  "steps_per_execution": 4,
+  "t_mul": 1.0
+ },
+ "recipe": {
+  "batch_size": 2790,
+  "dataset_shuffle": true,
+  "fit_shuffle": "keras default (True)",
+  "learning_rate": 0.003,
+  "loss": {
+   "class": "SparseCategoricalCrossentropy",
+   "from_logits": true
+  },
+  "lr_schedule": {
+   "alpha": 1e-06,
+   "alpha_steps": 10,
+   "first_decay_steps": 500,
+   "function": "cosine_decay_restarts_schedule",
+   "m_mul": 1.0,
+   "t_mul": 1.0
+  },
+  "optimizer": "Adam",
+  "optimizer_args": {},
+  "pareto_filter": [
+   [
+    "val_accuracy",
+    ">",
+    0.5
+   ],
+   [
+    "ebops",
+    "<",
+    500000.0
+   ]
+  ],
+  "pareto_metrics": [
+   "val_accuracy",
+   "ebops"
+  ],
+  "pareto_sides": [
+   1,
+   -1
+  ],
+  "released_epochs": 7000,
+  "source": {
+   "path": "chang/run_train.py",
+   "sha256": "bfe36347c12614c6d0aa0f0f1100c5ea4e985179d86628e1e9351a4d643d169a"
+  },
+  "steps_per_execution": 4,
+  "stopif": [
+   [
+    "ebops",
+    "<",
+    10000.0
+   ]
+  ],
+  "val_batch_size": 2790
+ },
+ "replica": null,
+ "s2_choice_sha256": null,
+ "s4_family": "C",
+ "s4_option": null,
+ "schedule": "ramp",
+ "schema_version": 1,
+ "seed": 6,
+ "stage": "S4",
+ "template": "BEST",
+ "tier": null,
+ "unset_inputs": [
+  "headline",
+  "s4_option",
+  "s2_record",
+  "init_tensors",
+  "param_counts"
+ ],
+ "wandb": {
+  "group": "chang-bitlinear-20261016",
+  "mode": "offline",
+  "project": "bnjettag-chang-bitlinear",
+  "run_name": null
+ }
+}

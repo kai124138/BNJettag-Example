@@ -1,0 +1,27 @@
+{
+  "admitted_configs": [
+    "configs/S1/CH-8-s1.json",
+    "configs/S1/CH-8-s2.json",
+    "configs/S1/CH-8-s3.json",
+    "configs/S1/F000-s1.json",
+    "configs/S1/F000-s2.json",
+    "configs/S1/F000-s3.json",
+    "configs/bench/CH-8-s1.json",
+    "configs/bench/F000-s1.json",
+    "configs/det/CH-8-s1-r1.json",
+    "configs/det/CH-8-s1-r2.json",
+    "configs/det/F000-s1.json",
+    "configs/smoke/CH-8-s1.json",
+    "configs/smoke/F000-s1.json"
+  ],
+  "campaign": "chang-bitlinear-20261016",
+  "controls": "held until S2 and measured admission; no S4 without separate Kai authority",
+  "draw_seeds": [
+    1,
+    2,
+    3
+  ],
+  "production_certification": null,
+  "schema": 1,
+  "source": "STUDY v0.15 sections 10-11; Kai decision D1, 2026-10-20, decisions.md \"2026-10-20 (2)\": defaults for D1 and D2; only eligible_now until export headline recorded; binary additions require Kai re-approval"
+}

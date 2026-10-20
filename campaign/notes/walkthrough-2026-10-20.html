@@ -1,0 +1,318 @@
+<title>Chang-BitLinear Walkthrough</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: one reading column (~72ch) like a lab notebook; a status strip first, then sections with uppercase eyebrows; tables scroll inside their own box. */
+:root{
+  --bg:#f4f6f7; --paper:#ffffff; --fg:#1b2530; --muted:#5b6a78; --line:#d5dde3;
+  --accent:#0e6a8a; --accent-soft:#dcecf2;
+  --pass:#1f7a4d; --fail:#b23a3a; --warn:#9a6a00; --soft-pass:#e2f2ea; --soft-fail:#f8e3e3; --soft-warn:#f7eed6;
+  --display:"IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#111920; --paper:#172129; --fg:#e4eaef; --muted:#9fb0bd; --line:#2c3942;
+  --accent:#5db9d8; --accent-soft:#17323d;
+  --pass:#6fcf97; --fail:#ef8a8a; --warn:#e2b451; --soft-pass:#15302a; --soft-fail:#3a1f1f; --soft-warn:#3a3014;
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#111920; --paper:#172129; --fg:#e4eaef; --muted:#9fb0bd; --line:#2c3942;
+  --accent:#5db9d8; --accent-soft:#17323d;
+  --pass:#6fcf97; --fail:#ef8a8a; --warn:#e2b451; --soft-pass:#15302a; --soft-fail:#3a1f1f; --soft-warn:#3a3014;
+  color-scheme:dark }
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:76ch;margin:0 auto}
+header{padding-block:40px 24px;border-bottom:1px solid var(--line)}
+h1{font-family:var(--display);font-weight:600;font-size:2rem;line-height:1.15;margin:0 0 8px;text-wrap:balance}
+.sub{color:var(--muted);margin:0;max-width:65ch}
+.meta{font-family:var(--mono);font-size:.8rem;color:var(--muted);margin-top:12px}
+h2{font-family:var(--display);font-weight:600;font-size:1.45rem;margin:0 0 10px;text-wrap:balance}
+h3{font-size:1.05rem;font-weight:600;margin:22px 0 6px}
+section{padding-block:30px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+p{margin:0 0 12px;max-width:68ch}
+ul,ol{margin:0 0 12px;padding-left:1.3em;max-width:68ch}
+li{margin-bottom:6px}
+.strip{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--accent);padding:16px 18px;margin-top:22px}
+.strip ol{margin:0;padding-left:1.2em}
+.strip li{margin-bottom:8px}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+.tbl{overflow-x:auto;margin:10px 0 16px;border:1px solid var(--line);background:var(--paper)}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{font-weight:600;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+tr:last-child td{border-bottom:none}
+td.n,th.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+code,.path{font-family:var(--mono);font-size:.84em;background:var(--accent-soft);padding:1px 5px;border-radius:3px;word-break:break-all}
+pre{font-family:var(--mono);font-size:.84rem;background:var(--paper);border:1px solid var(--line);padding:12px 14px;overflow-x:auto;margin:8px 0 14px}
+.pill{display:inline-block;font-family:var(--mono);font-size:.72rem;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.pass{background:var(--soft-pass);color:var(--pass)} .fail{background:var(--soft-fail);color:var(--fail)} .warn{background:var(--soft-warn);color:var(--warn)}
+.note{color:var(--muted);font-size:.9rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:12px 0 16px}
+.card{background:var(--paper);border:1px solid var(--line);padding:14px 16px;min-width:0}
+.card h4{margin:0 0 6px;font-size:.95rem}
+.card p{font-size:.92rem;margin:0}
+.rec{border-left:4px solid var(--accent)}
+dl{margin:0;max-width:68ch} dt{font-weight:600;margin-top:10px} dd{margin:2px 0 0 0;color:var(--fg)}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">Campaign chang-bitlinear-20261016</p>
+  <h1>Chang-BitLinear Walkthrough</h1>
+  <p class="sub">What this campaign is asking, every step taken since 16 October, what has actually been found, what is left, how long each part should take, and why it has taken this long. Written from the files in the campaign tree; every number names its source.</p>
+  <p class="meta">Written 2026-10-20 00:50 PDT by the orchestrator session; gate counts refreshed after the summary regeneration at 00:36 PDT; progress log updated 11:10 PDT. Campaign directory: campaigns/2026-10-16-chang-bitlinear (called C below). Times in the logs are UTC; dates in the text are Pacific unless marked.</p>
+
+  <div class="strip">
+    <p class="eyebrow">Where it stands, in five lines</p>
+    <ol>
+      <li><strong>Nothing has trained on the cluster yet.</strong> Four days have gone into building and checking the pipeline. No RUN exists, no approval exists.</li>
+      <li><strong>The code was fixed and re-checked overnight.</strong> Seven small commits (gate text, test paths, the resume comparator, the study stamp, your D2 rule, a sync-root guard, one test) took it to c4dc2a80ca2b. The full pass at the previous commit shows 91 pass, 34 needing the cluster or mulder, and 4 failures all on one test; the targeted rerun at the final commit clears that test. One remaining failing test is the stand-in for the Keras bug and is a defect in the test itself, fixed on a branch for the next commit set.</li>
+      <li><strong>The firmware check is decided:</strong> FB meets bit-exactness, II = 1 and fewer LUTs but fails timing (−1.090 ns); BF never finished C-synthesis at 8 or 24 hours, so it fails by the study's own rule. Both fail, so under your split-form rule H1 is the headline count for every binary arm. Recorded in STUDY v0.18 (critical PASS) and in PREFLIGHT.md.</li>
+      <li><strong>Approvals come in three steps, not one.</strong> At the current commit only the initial-tensor draws can launch; smoke, kill-and-resume, determinism and the benchmark need a rebind commit after the draws (prepared on a branch, waiting for the draw outputs) and a second approval; certification then needs a third before any production training. The BRIEF for the first, draws-only approval is installed and validates; its critical review is in its second round.</li>
+      <li><strong>Two things need you now.</strong> Blocking the approve command: your ruling on the Mutagen held-out read ("incident" recommended, or "stop"). Not blocking: keep the BF owner record (default) or run a 72-hour BF synthesis before the binary arms. Section 7.</li>
+    </ol>
+  </div>
+</header>
+
+<section id="question">
+  <p class="eyebrow">1. The question</p>
+  <h2>What this campaign is trying to find out</h2>
+  <p>Chang Sun published a transformer jet tagger for the CMS Level-1 trigger (arXiv:2510.24784) together with its code. His paper reports accuracy against a hardware-cost count. Your thesis is that a tagger whose weights are only −1 and +1 (binary weights) can sit on or above his accuracy-versus-cost curve.</p>
+  <p><strong>This campaign is at N = 8</strong>, eight particles per jet, not the N = 64 of the earlier campaigns. Chang's paper reports every architecture at N = 8, 16, 32 and 64; its headline numbers (MHA 77.9 %, Linformer 79.8 %) are the N = 64 rows, and N = 8 is the smallest row (MHA 66.3 %). You chose N = 8 on 16 October as question Q13, one of three options: "N=8 first, against Chang's MHA-8 hardware row; N=64 may follow later" (decisions.md). The study then scopes the claim to the released two-head MHA at N = 8 and says it does not concern other N (STUDY line 206). The practical reasons on record are that the released example code is what CH-8 reruns exactly, and that N = 8 is the cheapest to train: the study's planning rate of 3 GPU-s per epoch is an N = 8 figure, while the per-epoch ceilings it borrowed from N = 64 models were 31–38.8 s (STUDY §10). A result here is a result at N = 8 only.</p>
+  <p>The comparator is Chang's own code rerun on our data split, called <strong>CH-8</strong>. His paper reports <strong>66.3 %</strong> top-1 accuracy for that row (Table 1 row 1; STUDY §8.10). The study treats that figure as context, not a binding target, because his rows differ in heads, recipe and test usage; the campaign's real comparison is against our own CH-8 rerun.</p>
+  <h3>The arms (STUDY §5)</h3>
+  <ul>
+    <li><strong>CH-8</strong>: Chang's released code, rerun on our split. The comparator.</li>
+    <li><strong>F000</strong>: our own reconstruction of Chang's model. If F000 and CH-8 disagree, our rebuild is wrong, and that is a stop (STUDY §14).</li>
+    <li><strong>F111</strong>: our model with binary weights in all three layer groups (attention, feed-forward, hidden head). Each group can be on or off, which gives the factorial.</li>
+    <li><strong>BF and FB forms</strong>: two ways to combine batch normalization with binarization at four fused sites. FB folds the normalization scale into the weights and then binarizes (one magnitude per output column). BF binarizes first (one magnitude per layer) and then folds. The hardware cost differs between them.</li>
+  </ul>
+  <h3>How cost is counted (STUDY §3.1–§3.4)</h3>
+  <p>Cost is a bit-operation count of the exported constants. <strong>H1</strong> counts the exact widths. <strong>H2</strong> is lower: it assumes the hardware can apply one shared magnitude per column as a scale after a sign-only sum. H2 is only allowed as the headline if a real firmware export of a trained F111 model on mulder meets three criteria: bit-exact C-simulation on 4,096 validation jets, timing met (worst negative slack at least 0, initiation interval 1), and strictly fewer LUTs than the normal export. That is the <strong>export check</strong>. Your split-form rule (19 October 16:28 UTC): if both forms pass, H2 for all binary arms; if both fail, H1; if one passes, every binary arm trains under H1 and the passing form's arms also under H2, which adds 24 runs.</p>
+  <h3>Stages and budget (STUDY §10)</h3>
+  <div class="tbl"><table>
+    <tr><th>Stage</th><th>What it does</th><th class="n">GPU-hours (planned)</th><th>Needs you</th></tr>
+    <tr><td>S1 screen</td><td>51 runs: CH-8, F000, F100, the factorial, the PID pair; 3 seeds each</td><td class="n">327.25 (377.25 with the 50 reserve)</td><td>Approval only</td></tr>
+    <tr><td>S2</td><td>Trains nothing. Fixes the form, the best configuration and the claim band on validation</td><td class="n">0</td><td>No</td></tr>
+    <tr><td>S3 controls</td><td>Five controls after S2; one fits under the 400 cap. All 66 runs: 473.5 with reserve</td><td class="n">~96</td><td>Item 9</td></tr>
+    <tr><td>S4 confirmation</td><td>Fresh seeds; the only stage that gives a verdict</td><td class="n">+102.67 (C), +128.33 (A), +205.33 (B)</td><td>Yes, item 11</td></tr>
+  </table></div>
+  <p class="note">Planning rate 3 GPU-seconds per run-epoch, 7,000 epochs, 6.42 GPU-h per run. The study marks this as unmeasured; the B19 benchmark on the cluster measures it. If exactly one form passes the export check the cap becomes 531.25 GPU-h with reserve (STUDY §19.2 item 8).</p>
+  <p><strong>Success means</strong> (STUDY §17, claim C2): held-out top-1 above CH-8 at every cost allowance in the claim band, with the lower bound of the paired seed interval above zero. The study itself expects a deficit at the tightest budgets, since binary weights cannot be pruned to zero the way Chang's quantizer prunes. A win would be a training-procedure result, not a cheaper-hardware result.</p>
+</section>
+
+<section id="found">
+  <p class="eyebrow">2. Findings</p>
+  <h2>What has actually been found</h2>
+  <h3>In this campaign: engineering findings only</h3>
+  <ul>
+    <li><strong>A real Keras 3.14 bug (ticket B10-F1).</strong> Keras tracks a layer's loss terms by Python object id and keeps stale ids between training traces. When an id is reused, one layer's beta × EBOPs penalty is silently dropped from the training step while the logged cost looks normal. It showed up as two of about 40 fresh PC runs diverging. Without the fix every binary result would have been trained without its cost penalty and nothing in the logs would have said so. A guard now empties stale ids and counts loss terms every step, on every run, CH-8 included (your decision B10F1-1, 19 October). Source: C/preflight/investigations/B10-F1.md.</li>
+    <li><strong>Two fresh training runs on the PC CPU do not produce bit-identical records</strong> (gates G46 and G48, CH-8 at one resume boundary; G48 also fails on the PC GPU). This matters only for the kill-and-resume guarantee: if the cluster evicts a pod, can the run continue from a checkpoint as if nothing happened. The cause is not yet known. Source: C/preflight/gates/G46 and G48/29a459ce7ee6.</li>
+    <li><strong>A possible read of the held-out test file during a gate run</strong> (G13 on the PC GPU). A file-watch saw a placeholder test file opened during one run but could not say by which process; the runner's own file table did not hold it; the CPU version of the same gate passes. If a real read, it is a stop under STUDY §14. Not yet resolved. A second audit of the same kind (G51 on the PC CPU, seen only after the summary was regenerated) counted one forbidden event during the seed draw while its kernel-level audit saw zero opens; also unresolved.</li>
+    <li><strong>The export check has its outcome.</strong> FB (factored / normal): bit-exact on 4,096 validation jets, II = 1, worst negative slack −1.090 / −1.087 ns, post-opt CLB LUTs 394,351 / 402,252, so the factored route is smaller but neither route meets timing; criterion 2 fails. BF and the trained CH-8 normal route never completed C-synthesis at the 8 h or 24 h cap (rc 124), so BF has no result and fails by the study's fail-closed rule and the owner's record. Both forms fail, so H1 is the headline for every binary arm under your split-form rule; no extra H2 runs. Also recorded: at this model size the designs exceed the xczu7ev part in this out-of-context flow (LUT utilization 171 % and 175 %; Chang's own CH-8 at initialization 252 %), context for the report, not a stop. Sources: C/preflight/export/PREFLIGHT-rows.md, the evaluation report, STUDY v0.18 §3.4.</li>
+  </ul>
+  <h3>Before this campaign: what the lab can quote</h3>
+  <p>The lab's rule is that a number is quotable only from a VERIFY.md with seeds and an interval. Checked against that rule:</p>
+  <div class="tbl"><table>
+    <tr><th>Work</th><th>Result as recorded</th><th>Status</th></tr>
+    <tr><td>2026-09-25 pt-weighting, N = 8, W1A8 (1-bit weights, 8-bit activations), 8 seeds</td><td>Held-out top-1 0.6234 ± 0.0019; macro one-vs-rest AUC 0.8711 ± 0.0013 (n = 260,000). pT reweighting made it worse on 8 of 8 seeds.</td><td><span class="pill pass">verified</span> with a caveat: its primary metric was written after the results, so it is not a pre-registered test</td></tr>
+    <tr><td>2026-09-20 performance index, N = 64, 31 runs</td><td>Single-seed validation accuracies (e.g. 58.35 % at 599,799 EBOPs)</td><td><span class="pill warn">unverified</span> no seed intervals</td></tr>
+    <tr><td>2026-10-06 / 10-08 the 350k-EBOPs collapse</td><td>Internal reads: binary checkpoints at a 350k budget reach 0.236–0.405 validation accuracy; unsqueezed or 5M checkpoints 0.65–0.66. The 2026-10-08 wave's STATE.json records the 5M reference as valid at 0.6498 and the 350k baseline as invalid ("no feasible checkpoint in epochs &lt; 1000"). The pilot readout waits on your answers to Q1–Q5.</td><td><span class="pill warn">unverified</span> single seed, no VERIFY.md, hit by an eviction and five harness defects</td></tr>
+    <tr><td>2026-09-29 GPU benchmark</td><td>Throughput only; prefers A100 at one GPU, RTX 4090 at 2–16</td><td><span class="pill pass">verified</span> engineering, not physics</td></tr>
+    <tr><td>Chang's MHA-64</td><td>77.9 % at 350k EBOPs (his Table 1, his split), as quoted in the discovery-350k proposal</td><td>Context for the N = 64 line only</td></tr>
+  </table></div>
+  <p>So: one verified binary-tagger number exists in the lab, at N = 8, from September. Nothing at N = 64 is verified, and the 350k collapse has suggestive internal reads but no result of record. This campaign would be the first pre-registered, multi-seed, held-out comparison the lab has run.</p>
+</section>
+
+<section id="done">
+  <p class="eyebrow">3. Steps taken</p>
+  <h2>Everything done so far, in order</h2>
+  <div class="tbl"><table>
+    <tr><th class="n">Date</th><th>What happened</th><th>Who</th></tr>
+    <tr><td class="n">10-16</td><td>You set the direction: keep Chang's setup, binary weights only where they help, beat Chang's front; N = 8 first; top-1 against EBOPs. You re-decided Q1, Q3, Q8–Q11 and authorized the build and GPU queueing. STUDY v0.1 drafted.</td><td>Kai, orchestrator</td></tr>
+    <tr><td class="n">10-17</td><td>STUDY v0.2–v0.8: four review rounds (critical, physics, Chang-fidelity, constructive reviewers), arbiter PASS with six conditions. Headline-cost rule frozen (v0.3). You: try both fold orders; test the da4ml export on mulder first; "automate everything overnight". Cluster admin deleted 169 ConfigMaps of ours; rule: no data in ConfigMaps. PREFLIGHT plan written: 86 gates in batches B0–B20.</td><td>Opus reviewers, Kai</td></tr>
+    <tr><td class="n">10-18</td><td>Build day: batches B0–B10 (fork, environment lock, data verified, cost counts, seeds, runner, binary layers, frozen evaluation, PID controller, resume code). 163 commits in one day. Gate G54 failed on seven power-table cells, ruled a STUDY error, fixed in v0.9/v0.10. You: "just run the trainings on NRP", no mulder before training; then plan approved, make H2 valid, mulder allowed for the export check only.</td><td>Codex, Opus, Kai</td></tr>
+    <tr><td class="n">10-19</td><td>Everything on NRP stays inside the kai-data volume (you). Phase 2 staged on kai-data (bundle, data, environment). Export check: pilot models trained on the PC, exported on mulder; BF and CH-8 syntheses hit the 8 h limit, rerun with 24 h. Split-form default set, then overridden by you ("do both"). B10-F1 found and traced (Opus investigator). B17 pack runner, B18P W&B keys, B18 configs regenerated. You answered the four launch conditions (OD-13, OD-15, OD-12 yes; claim band (b) without (c)), said "i approve" (the harness could not record it: no BRIEF.md yet), and ordered the loss guard on every run. STUDY v0.11–v0.15, critical PASS at v0.15.</td><td>Codex, Opus, cluster-ops, Kai</td></tr>
+    <tr><td class="n">10-19 18:09 PDT</td><td>Final code commit 29a459ce7ee6 after a G51 allowlist fix. You allowed Opus 5.5 when Codex is stuck. Full gate pass restarted at that commit.</td><td>Codex, Kai</td></tr>
+    <tr><td class="n">10-19 23:55 PDT</td><td>PC batch finished (BATCH_DONE). G14 clean rerun passed. G48 failed on the GPU as well.</td><td>PC batch</td></tr>
+    <tr><td class="n">10-20 00:15 PDT</td><td>Mac rebooted; both Codex jobs died. Logs saved to C/preflight/b18/codex and C/preflight/export/codex.</td><td>—</td></tr>
+  </table></div>
+  <p class="note">Sources: .claude/memory/decisions.md (2026-10-16 to 10-19 entries), C/PREFLIGHT.md, C/review/, C/preflight/b18/final/, the PC log ~/lab/scratch/cbl1016/b18-29a459ce7ee6.log.</p>
+
+  <h3>The study's fifteen versions</h3>
+  <div class="tbl"><table>
+    <tr><th>Version</th><th class="n">Date</th><th>Change</th><th>Verdict</th></tr>
+    <tr><td>v0.1</td><td class="n">10-16</td><td>First draft</td><td>ITERATE</td></tr>
+    <tr><td>v0.2–v0.4</td><td class="n">10-17</td><td>Review findings applied; headline rule frozen; Appendix A.2</td><td>ITERATE each</td></tr>
+    <tr><td>v0.5</td><td class="n">10-17</td><td>Three reviews applied</td><td>all PASS; arbiter PASS with conditions</td></tr>
+    <tr><td>v0.6–v0.8</td><td class="n">10-17</td><td>14 minor items; constructive items K1–K9; four B fixes</td><td>verified</td></tr>
+    <tr><td>v0.9–v0.10</td><td class="n">10-18</td><td>Power-table fix; label text</td><td>PASS at v0.10</td></tr>
+    <tr><td>v0.11–v0.13</td><td class="n">10-19</td><td>Your decisions written in; fixes</td><td>ITERATE (3 A, 6 B), then PASS at v0.13</td></tr>
+    <tr><td>v0.14–v0.15</td><td class="n">10-19</td><td>Loss-guard sentence; two fixes</td><td>PASS at v0.15 (of record)</td></tr>
+  </table></div>
+
+  <h3>The 130 check rows by family</h3>
+  <p>The plan had 86 distinct gates. A gate can run on the Mac, the PC CPU, the PC GPU, mulder or the cluster, so the final table has 130 gate × machine rows (C/preflight/b18/final/GATES.md).</p>
+  <div class="tbl"><table>
+    <tr><th>Family</th><th class="n">Rows</th><th>What it checks</th></tr>
+    <tr><td>Environment and Chang's files</td><td class="n">7</td><td>Locked package versions; Chang's code and weights unchanged</td></tr>
+    <tr><td>Data and held-out isolation</td><td class="n">4</td><td>The test file is never opened before selection is frozen</td></tr>
+    <tr><td>Seeds and runner fidelity</td><td class="n">9</td><td>Seeds reproduce; our runner matches Chang's recipe</td></tr>
+    <tr><td>Binary layers</td><td class="n">18</td><td>Binarization, fold order, gradients</td></tr>
+    <tr><td>Cost counts and frozen evaluation</td><td class="n">17</td><td>H1 and H2 counts; the evaluator cannot change after launch</td></tr>
+    <tr><td>Front and diagnostics</td><td class="n">8</td><td>Front selection; collapse diagnostic</td></tr>
+    <tr><td>PID controller</td><td class="n">5</td><td>The budget controller that holds a run at its cost target</td></tr>
+    <tr><td>Resume, reload and held-out audit</td><td class="n">8</td><td>Kill-and-resume gives the same records; reload of saved state</td></tr>
+    <tr><td>Statistics, W&B, configs</td><td class="n">12</td><td>Interval code; logging; generated configs match the study</td></tr>
+    <tr><td>Export on mulder</td><td class="n">13</td><td>The firmware export check</td></tr>
+    <tr><td>Launch and NRP</td><td class="n">17</td><td>Packing, admission, budget accounting, cluster behaviour</td></tr>
+    <tr><td>Test suites</td><td class="n">12</td><td>Unit and integration tests per batch</td></tr>
+  </table></div>
+</section>
+
+<section id="gates">
+  <p class="eyebrow">4. Where the checks stand</p>
+  <h2>The failing checks, each with a cause and a disposition</h2>
+  <p>Two records now exist. The pass at the previous commit (29a459ce7ee6, regenerated 00:36 PDT): FAIL 8, PASS 88, NOT RUN 33, every failure explained below. The pass at the fixed commit 38f4ebae3874 (finished 10:00 PDT): <strong>FAIL 4, PASS 91, PASS WITH SKIPS 1, NOT RUN 34</strong>; every gate that had failed now passes (G08, G13 on both PC places, G14, G46, G48 on both places, G49 with 109 of 109, G51, G57), and the four failures were one Linux-only test that called the file audit without a working directory. The targeted rerun at the final commit c4dc2a80ca2b (10:21 PDT) clears that test; one other test, the stand-in for the Keras loss-term bug, still fails there because of its own id bookkeeping, not the guard; its fix is on the branch for the next commit set.</p>
+  <div class="tbl"><table>
+    <tr><th>Gate</th><th>What failed</th><th>Cause</th><th>Disposition</th></tr>
+    <tr><td>G08 pcc</td><td>A deliberately incomplete manifest is refused, but the gate did not see the word "incomplete"</td><td>Known: the gate truncates the refusal message to 160 characters and the long path pushes the word out</td><td><span class="pill pass">fixed</span> commit f60d3bc (check unchanged, only the display truncates); reruns in the next pass</td></tr>
+    <tr><td>G13 pcg</td><td>A placeholder test file was opened during one run</td><td>Unknown: file-watch events carry no process identity; CPU version passes</td><td>Short investigation; if real, a §14 stop</td></tr>
+    <tr><td>G14 pcc</td><td>Logging mode conflict</td><td>Known: the Codex operator forced WANDB_MODE=disabled</td><td><span class="pill pass">PASS on clean rerun</span></td></tr>
+    <tr><td>G46 pcc, G48 pcc, G48 pcg</td><td>Two fresh runs disagree before the resume point (one boundary; other boundaries agree)</td><td><span class="pill pass">known</span> The comparator compared two process-telemetry columns (peak memory, GPU wall time) that can never match between processes; all 36 scientific fields are identical in every row, verified on the saved records. Not non-determinism, not a training defect</td><td><span class="pill pass">fixed</span> commit d8dfe03 drops every telemetry key from the comparison; six new tests; replay of the saved records passes; reruns in the next pass</td></tr>
+    <tr><td>G51 pcc</td><td>The open-file audit of the seed draw counted one forbidden event</td><td>Lead, not a cause: the kernel-level audit in the same run saw zero opens of any held-out file, so the count may be the guard's own self-test. Same flavour as G13</td><td>Short look together with G13; if a real read, a §14 stop</td></tr>
+    <tr><td>tests-b1 pcc</td><td>11 of 640 tests in the B17 tools and NRP suites</td><td>Known: the tests hard-code the Mac path to tools/harness.py and tools/run_handoff.py, which do not exist on the PC. The same files pass on the Mac</td><td><span class="pill pass">fixed</span> commit f60d3bc resolves the lab root by environment, layout or known roots; both tools exist on the PC</td></tr>
+    <tr><td>tests-offline mac</td><td>One of 610 tests</td><td>Known: the Codex sandbox denies the process-group kill the test uses</td><td><span class="pill pass">disposed</span> rerun outside the sandbox at 04:10 PDT: 610 passed, 4 skipped; evidence saved beside the gate</td></tr>
+  </table></div>
+  <p class="note">Not run (33 rows): everything that needs the cluster (B19) or mulder (the export batch G61–G70 at the export commit 0dc211ecbacd), plus G49 on the GPU and G72 in the sandbox (passed when run outside it).</p>
+</section>
+
+<section id="left">
+  <p class="eyebrow">5. What is left</p>
+  <h2>How we get from here to a result, with time per step</h2>
+  <p>Each estimate names its basis. "Agent time" is wall time with the agents working; your answers add whatever they add. The one full gate pass we have timed ran from 18:05 to 23:55 PDT, so about <strong>6 h per full pass</strong>.</p>
+  <div class="tbl"><table>
+    <tr><th class="n">#</th><th>Step</th><th>Owner</th><th>Done when</th><th>Estimate and basis</th></tr>
+    <tr><td class="n">0</td><td>Regenerate GATES.md from the finished batch after checking that the Mac holds every PC evidence directory</td><td>Orchestrator + one worker</td><td><span class="pill pass">done 00:36 PDT</span> no row running; G14 PASS</td><td>Took about 40 min</td></tr>
+    <tr><td class="n">1</td><td>Triage the eight failing rows (table above; G46 and G48 share one cause, G13 and G51 one look)</td><td>Codex (G08, tests-b1 paths), Opus (G13/G51, G46/48), orchestrator (test)</td><td>Each has a cause and a disposition</td><td><span class="pill pass">done 10:30 PDT</span> all eight rows explained; G13 and G51 were artifacts of gate work directories inside the synced folder (investigator ticket); every gate passes at the fixed commit</td></tr>
+    <tr><td class="n">2</td><td>Commit the fixes; regenerate the configs against STUDY v0.15 and apply D2 in the same final commit; rerun the full gate pass at that commit</td><td>Codex; orchestrator commits</td><td>No FAIL except recorded exclusions</td><td><span class="pill pass">done</span> pass at 38f4ebae3874 ran 04:42–10:00 PDT; targeted rerun at c4dc2a80ca2b 10:15–10:21; one recorded exception (the stand-in test, cause known)</td></tr>
+    <tr><td class="n">3</td><td>Refresh the BRIEF so it names STUDY v0.15 and the final hashes; regenerate configs; put D1 (admission scope) and D2 (reserve accounting) to you, one at a time</td><td>Codex; Kai for D1, D2</td><td>BRIEF candidate has no stale field</td><td><span class="pill pass">done 11:07 PDT</span> BRIEF v3 installed with the 13-config ADMISSION; scope: draws only; validator VALID</td></tr>
+    <tr><td class="n">4</td><td>PREFLIGHT critical review</td><td>Opus reviewer</td><td>PASS</td><td><span class="pill warn">round 2 running</span> round 1 (ITERATE) narrowed approval 1 to the draws and fixed three wording defects; the STUDY outcome amendment passed at its third round (v0.18)</td></tr>
+    <tr><td class="n">5</td><td>Stage the final bundle on kai-data; write BRIEF.md and ADMISSION.json; harness validate; you run harness approve</td><td>cluster-ops; Kai</td><td>APPROVAL.json exists and matches</td><td>~1 h agent time (Phase 2 staging took one session on 10-19) plus your command</td></tr>
+    <tr><td class="n">6</td><td>Export check: evaluate the three criteria; apply the headline rule and your split-form rule; record; regenerate the binary configs</td><td>Codex; orchestrator; Kai</td><td>Headline recorded with its file paths</td><td><span class="pill pass">done 10:56 PDT</span> both forms fail, H1 for all binary arms; configs regenerated with H1 on the branch (2222f5e8f40a); your confirmation of the BF record is the open item</td></tr>
+    <tr><td class="n">7</td><td>B19 on the cluster in three approvals: (1) initial-tensor draws; (2) after the rebind commit and its gate pass: smoke, kill-and-resume, determinism record, packing benchmark, measured rate; (3) after certification: production</td><td>cluster-ops; Kai approves three times</td><td>Measured required screen within 350 + 50 GPU-h</td><td>Draws: hours after approval 1. Rebind pass ~6 h on the PC. Then about a day, unmeasured; depends on the NRP queue</td></tr>
+    <tr><td class="n">8</td><td>RUN: CH-8 and F000 first; binary arms after step 6. The harness cron monitors; no session watches</td><td>campaign.py submit</td><td>Runs complete</td><td>S1 is 327 GPU-h planned, unmeasured. Wall time = 327 ÷ GPUs running in parallel: 8 GPUs ≈ 41 h, 4 GPUs ≈ 82 h, plus queue time</td></tr>
+    <tr><td class="n">9</td><td>S2 on validation, S3 controls, S4 only if you fund it</td><td>Automatic; Kai for S4</td><td>Per stage</td><td>S2 hours; S3 ≈ 96 GPU-h; S4 +103 to +205 GPU-h</td></tr>
+    <tr><td class="n">10</td><td>VERIFY (recompute from .npz) and REPORT, each through review</td><td>results-analyst, paper-writer, reviewers</td><td>REPORT PASS</td><td>1–2 days agent time, unmeasured</td></tr>
+  </table></div>
+  <div class="cols">
+    <div class="card rec"><h4>Trimmed path (recommended)</h4><p>Steps 0–5 in <strong>1–2 working days</strong> if no code fix beyond G08 is needed, then step 7 about a day. First training launch (CH-8 and F000) in roughly <strong>2–3 days</strong>, assuming your answers come the same day. Binary arms follow step 6.</p></div>
+    <div class="card"><h4>Full process</h4><p>Adds the two Opus debates and the G46/48 investigation on the PC before step 2. Each code fix that comes out of them adds a ~6 h pass. Realistically <strong>4–7 days</strong> to the first launch.</p></div>
+    <div class="card"><h4>Training itself</h4><p>Unknown until B19 measures the GPU rate and the cluster's parallelism. The planning figure of 6.42 GPU-h per run is explicitly unmeasured (STUDY §10).</p></div>
+  </div>
+</section>
+
+<section id="why">
+  <p class="eyebrow">6. Time</p>
+  <h2>Why it has taken this long</h2>
+  <p>The honest accounting has three parts: the process, the orchestration's own mistakes, and the one thing that justifies the rigour.</p>
+  <h3>The process</h3>
+  <ul>
+    <li>The lab rules (CLAUDE.md, RULES.md, SYSTEM.md) send every campaign through STUDY, PREFLIGHT, RUN, VERIFY, REPORT with reviewers and gates at each step. They were written after real problems: invented numbers, unreproducible runs, a cluster filled with our ConfigMaps. They are your rules and you can change them.</li>
+    <li>On this campaign the machinery grew past its purpose: a 2,126-line study in fifteen versions over four days, 202 commits (163 on one day), 86 gates in 21 batches, 130 check rows, and every fix requiring a new commit and a ~6 h gate pass.</li>
+    <li>Your standing instruction was to keep going ("automate everything overnight", "delegate all tasks to codex astra agents, keep going"). The machine did. Nobody stopped to ask whether the rigour level matched what you wanted. That is what this page is for.</li>
+    <li>Structural costs: context moves only through files, so each new session re-verifies the last; agents cannot see each other; sessions end at usage limits mid-step; the firmware synthesis is 24 h per attempt; the cluster needs a human approval that the harness could not even record until a BRIEF exists.</li>
+  </ul>
+  <h3>The orchestration's own errors, from the record</h3>
+  <ul>
+    <li>17 October: a blinding slip by the orchestrator, recorded in decisions.md.</li>
+    <li>18 October: gate G54 failed on seven power-table cells; the cause was an error in the study itself (fixed in v0.9/v0.10).</li>
+    <li>19 October: the Codex operator forced WANDB_MODE=disabled, which failed G14 and cost a rerun; the orchestrator overwrote a G51 result file by reusing an output path (the original stdout was kept, a note left).</li>
+    <li>Reviews were run on a study that then changed because of decisions that could have been asked earlier (v0.11 was an ITERATE with 3 A-level findings after your decisions were written in).</li>
+    <li>The plan for tonight included two three-round Opus debates over whether a test-harness artifact is real. That is a lot of spend for a question a short look could settle.</li>
+    <li>Tonight's reboot killed two jobs with no automatic restart, because the only monitors were processes on the Mac.</li>
+  </ul>
+  <h3>What the rigour has bought</h3>
+  <p>The Keras bug B10-F1. It would have trained every binary model without its cost penalty while the logs looked normal, and the campaign would have reported a false front. The gate that caught it (fresh-run agreement) is the same family that is failing now for a different reason. The held-out isolation gates are the other half: they are what makes a "beats Chang" claim defensible.</p>
+</section>
+
+<section id="decisions">
+  <p class="eyebrow">7. Decisions</p>
+  <h2>What you have settled, what is open, and your say now</h2>
+  <h3>Settled by you (decisions.md)</h3>
+  <ul>
+    <li>16 Oct: direction, N = 8 first, top-1 against EBOPs; build and GPU queueing authorized.</li>
+    <li>17 Oct: both fold orders; da4ml test on mulder first; everything overnight, Opus preferred.</li>
+    <li>18 Oct: train on NRP, no mulder before training; then: plan approved, make H2 valid, mulder for the export check.</li>
+    <li>19 Oct: everything on NRP inside kai-data; split-form case: do both; launch conditions OD-13, OD-15, OD-12 yes; claim band (b) without (c); loss guard on every run; final commit 29a459ce7ee6; Opus allowed when Codex is stuck.</li>
+  </ul>
+  <h3>Open, waiting for you (STUDY §19.2 and the handoff)</h3>
+  <dl>
+    <dt>D1, admission scope: <span class="pill pass">yes (04:40 PDT, "defaults for D1 and D2")</span></dt><dd>The installed ADMISSION.json admits the 13 configs runnable now; binary arms are added when the headline is recorded, under your re-approval. The runner's own refusal of a null headline stays as the second guard.</dd>
+    <dt>D2, reserve accounting: <span class="pill pass">yes (04:40 PDT)</span></dt><dd>A job that never started is charged zero (only when its pods are observed never to have started; unknown keeps the bound); a failed job is charged its measured time. Code change in the budget function, in the final commit.</dd>
+    <dt>Mutagen held-out read: <span class="pill fail">blocking the approve command</span></dt><dd>During one gate run at the old commit the gate hard-linked the real held-out archive into the synced folder for about 30 s and the sync agent read its bytes; no code path consumed them; no copy exists; the gates now refuse synced folders. Recommended: "incident", not a stop. "stop" means re-sealing the held-out split before any launch.</dd>
+    <dt>BF owner record: <span class="pill warn">not blocking</span></dt><dd>BF is recorded as impossible to complete within the plan's synthesis budget (8 h, then 24 h). Default: the record stands, binary arms proceed under H1 with approval 3. Alternative: a 72 h BF synthesis first, which can only add the 24 extra H2 runs and delays binary arms by up to three days.</dd>
+    <dt>Item 8, GPU rate</dt><dd>If B19 measures more than about 3.21 GPU-s per run-epoch, raise the cap or cut scope. If no: stop at PREFLIGHT.</dd>
+    <dt>Item 9, controls</dt><dd>One control slot under 400 GPU-h (default) or about 475 for all five.</dd>
+    <dt>Item 10, harness approve</dt><dd>Your command on the final BRIEF. If no: nothing launches.</dd>
+    <dt>Item 11, S4 confirmation</dt><dd>Fund it, size A, B or C (recommended C). If no: screen only, no claims.</dd>
+    <dt>Item 5 and the 531.25 cap</dt><dd>Only if exactly one form passes the export check.</dd>
+    <dt>Item 6</dt><dd>Later synthesis permission. If no: no LUT statements in the report.</dd>
+  </dl>
+  <h3>Your say at 04:00 PDT: the level of rigour. You chose option 1.</h3>
+  <div class="cols">
+    <div class="card rec"><h4>1. Trimmed path (recommended)</h4><p>Record the known-cause failures with their causes; write the CPU non-determinism down as a bounded note and test resume on the cluster; settle G13 with one short look; fix G08; one gate pass; BRIEF; approve; get CH-8 and F000 training. First real number: does our pipeline reproduce Chang at all.</p></div>
+    <div class="card"><h4>2. Full process</h4><p>Debates, investigator on the PC, gate reruns, review, then launch. Safest record, slowest.</p></div>
+    <div class="card"><h4>3. Pause</h4><p>Nothing launches; you read this page and the study, and decide with me step by step.</p></div>
+  </div>
+  <p class="note">Your words: "okay this all seems good, can u jsut keep going, and dont archive this but rather keep going til we run the training, i approve all of the arms and the runs and their desgins are good and very intentional." Before each future decision you get two plain sentences, what it means and what changes if you say no.</p>
+</section>
+
+<section id="running">
+  <p class="eyebrow">8. Running now</p>
+  <h2>What is running after the reboot, and how to check</h2>
+  <div class="tbl"><table>
+    <tr><th>Where</th><th>What</th><th>State at 00:30 PDT</th><th>Check with</th></tr>
+    <tr><td>PC (kaipc)</td><td>Idle; checkout at c4dc2a80ca2b, clean. Next use: the rebind commit's gate pass after the draws</td><td><span class="pill pass">idle</span> B18f pass 04:42–10:00, targeted rerun 10:15–10:21</td><td><code>ssh kaipc 'tail -n 3 ~/lab/scratch/cbl1016/b18-rerun-29a459ce7ee6.log'</code></td></tr>
+    <tr><td>mulder</td><td>Nothing running; the three 24 h syntheses ended at the cap (rc 124) at 09:29 PDT</td><td><span class="pill pass">idle</span> evidence copied to the campaign tree</td><td><code>ssh mulder 'bash ~/scratch/cbl1016-export/status.sh'</code></td></tr>
+    <tr><td>Mac</td><td>One Opus reviewer (PREFLIGHT round 2); no Codex job</td><td><span class="pill warn">reviewing</span> since 11:07 PDT</td><td><code>ls campaigns/2026-10-16-chang-bitlinear/review/</code></td></tr>
+    <tr><td>NRP</td><td>Nothing of ours; 0 kai- ConfigMaps</td><td><span class="pill pass">clean</span></td><td><code>kubectl get jobs -n cms-ml</code></td></tr>
+  </table></div>
+  <p>Two decisions are with you (section 7). When the review passes and your Mutagen ruling is recorded, you get the first approve command, for the draws only.</p>
+</section>
+
+<section id="glossary">
+  <p class="eyebrow">9. Glossary</p>
+  <h2>Terms used above</h2>
+  <dl>
+    <dt>EBOPs</dt><dd>Effective bit operations, the hardware-cost proxy from Chang's HGQ quantizer. "Native" is its own count; H1 and H2 are the campaign's exported-constant counts.</dd>
+    <dt>HGQ / HGQ2</dt><dd>High-granularity quantization: every value learns its own bit width during training, and can be pruned to zero.</dd>
+    <dt>da4ml, hls4ml</dt><dd>da4ml turns constant matrices into adder trees; hls4ml turns a network into FPGA firmware code. Vitis HLS makes hardware from that code; Vivado synthesizes it and reports LUTs and timing.</dd>
+    <dt>Held-out set</dt><dd>Test jets that no code may read until model selection is frozen. The G13 family guards it.</dd>
+    <dt>Kill-and-resume</dt><dd>Restarting a run from a checkpoint after the cluster evicts it, with identical records afterwards. The G46/G48 family tests it.</dd>
+    <dt>PID controller</dt><dd>The feedback loop that holds a run at its cost target during training.</dd>
+    <dt>Gate</dt><dd>An automated check with a pass/fail result and saved evidence; a launch needs the gates of record to pass or to be excluded with a reason.</dd>
+    <dt>BRIEF, ADMISSION, APPROVAL</dt><dd>The campaign's authority files. BRIEF says what may launch and under which limits; ADMISSION lists the admitted configs; APPROVAL is written only by your harness command.</dd>
+    <dt>B18, B19</dt><dd>Preflight batches. B18 is the final-commit gate pass; B19 is the cluster-side batch after approval (draws, smoke, resume, benchmark).</dd>
+  </dl>
+</section>
+
+<section id="sources">
+  <p class="eyebrow">10. Sources</p>
+  <h2>Where each fact comes from</h2>
+  <ul>
+    <li><span class="path">.claude/memory/decisions.md</span>: every decision above, with your words quoted.</li>
+    <li><span class="path">C/review/snapshots/v0.15/STUDY.md</span>: the question (§1), arms (§5), cost rule (§3.4), budget (§10), stop rules (§14), claims (§17), your items (§19.2), Chang's 66.3 % (§8.10).</li>
+    <li><span class="path">C/preflight/b18/final/GATES.md</span> and <span class="path">C/preflight/gates/&lt;gate&gt;/29a459ce7ee6/</span>: gate rows and evidence.</li>
+    <li><span class="path">C/preflight/investigations/B10-F1.md</span>: the Keras bug.</li>
+    <li><span class="path">C/preflight/export/PLAN.md</span>: the export check.</li>
+    <li><span class="path">campaigns/2026-09-25-pt-weighting/VERIFY.md</span>, <span class="path">campaigns/2026-10-08-discovery-350k/STATE.json</span> and <span class="path">PROPOSAL.md</span>: prior numbers.</li>
+    <li><span class="path">C/notes/handoff-2026-10-19.md</span>, <span class="path">handoff-2026-10-20.md</span>, <span class="path">LEDGER.md</span>: the running state.</li>
+  </ul>
+</section>
+</div>

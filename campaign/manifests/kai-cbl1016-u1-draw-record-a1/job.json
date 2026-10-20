@@ -1,0 +1,227 @@
+{
+ "apiVersion": "batch/v1",
+ "kind": "Job",
+ "metadata": {
+  "annotations": {
+   "bnjettag.io/arm": "u1-draw-record",
+   "bnjettag.io/arms-per-pod": "1",
+   "bnjettag.io/gpu-product": "NVIDIA-GeForce-RTX-4090",
+   "bnjettag.io/pack": "u1-draw-record",
+   "bnjettag.io/single-arm-justified": "U1 initial-tensor draw: one CH-8 draw per seed, run sequentially with one visible GPU like each training pod; there is no training arm and nothing to pack."
+  },
+  "labels": {
+   "bnjettag.io/arm": "u1-draw-record",
+   "bnjettag.io/stage": "draw",
+   "campaign": "chang-bitlinear-20261016",
+   "user": "kai"
+  },
+  "name": "kai-cbl1016-u1-draw-record-a1",
+  "namespace": "cms-ml"
+ },
+ "spec": {
+  "activeDeadlineSeconds": 10800,
+  "backoffLimit": 0,
+  "completions": 1,
+  "parallelism": 1,
+  "podFailurePolicy": {
+   "rules": [
+    {
+     "action": "FailJob",
+     "onExitCodes": {
+      "containerName": "pack",
+      "operator": "In",
+      "values": [
+       1,
+       2,
+       3,
+       76,
+       124
+      ]
+     }
+    }
+   ]
+  },
+  "podReplacementPolicy": "Failed",
+  "template": {
+   "metadata": {
+    "annotations": {
+     "bnjettag.io/arm": "u1-draw-record",
+     "bnjettag.io/arms-per-pod": "1",
+     "bnjettag.io/gpu-product": "NVIDIA-GeForce-RTX-4090",
+     "bnjettag.io/pack": "u1-draw-record",
+     "bnjettag.io/single-arm-justified": "U1 initial-tensor draw: one CH-8 draw per seed, run sequentially with one visible GPU like each training pod; there is no training arm and nothing to pack."
+    },
+    "labels": {
+     "bnjettag.io/arm": "u1-draw-record",
+     "bnjettag.io/stage": "draw",
+     "campaign": "chang-bitlinear-20261016",
+     "user": "kai"
+    }
+   },
+   "spec": {
+    "affinity": {
+     "nodeAffinity": {
+      "requiredDuringSchedulingIgnoredDuringExecution": {
+       "nodeSelectorTerms": [
+        {
+         "matchExpressions": [
+          {
+           "key": "nvidia.com/gpu.product",
+           "operator": "In",
+           "values": [
+            "NVIDIA-GeForce-RTX-4090"
+           ]
+          },
+          {
+           "key": "kubernetes.io/hostname",
+           "operator": "NotIn",
+           "values": [
+            "nautilus-ext-gpu01.fullerton.edu",
+            "hcc-nrp-shor-c6017.unl.edu"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     }
+    },
+    "automountServiceAccountToken": false,
+    "containers": [
+     {
+      "command": [
+       "/data/cbl1016/runtime/venv-c8725569731a/bin/python",
+       "-B",
+       "/cmcode/nrp/run_pack.py"
+      ],
+      "env": [
+       {
+        "name": "CBL_PLAN",
+        "value": "{\"archive_kind\":\"record\",\"arms\":[{\"arm_class\":\"initial-tensors\",\"config_path\":\"manifests/data-prep-150c.json\",\"name\":\"CH-8-s1-draw-record\",\"out\":\"/data/cbl1016/initial/NVIDIA-GeForce-RTX-4090/record\",\"seed\":1},{\"arm_class\":\"initial-tensors\",\"config_path\":\"manifests/data-prep-150c.json\",\"name\":\"CH-8-s2-draw-record\",\"out\":\"/data/cbl1016/initial/NVIDIA-GeForce-RTX-4090/record\",\"seed\":2},{\"arm_class\":\"initial-tensors\",\"config_path\":\"manifests/data-prep-150c.json\",\"name\":\"CH-8-s3-draw-record\",\"out\":\"/data/cbl1016/initial/NVIDIA-GeForce-RTX-4090/record\",\"seed\":3}],\"campaign\":\"chang-bitlinear-20261016\",\"code_sha\":\"c4dc2a80ca2b8726492f9c49d5de96b3a068f128\",\"deadline_s\":10800,\"deterministic_ops\":false,\"gpu_product\":\"NVIDIA-GeForce-RTX-4090\",\"job_attempt\":1,\"k\":1,\"mem_fraction\":0.5,\"mode\":\"draw\",\"pack\":\"u1-draw-record\",\"resume_every\":1,\"schema\":1,\"source_bundle\":\"bbc14fe8ff7b6550369211cc729230fbb7d6430e321b378ffd038384a610d212\",\"stage\":\"draw\"}"
+       },
+       {
+        "name": "PYTHONDONTWRITEBYTECODE",
+        "value": "1"
+       },
+       {
+        "name": "PYTHONUNBUFFERED",
+        "value": "1"
+       },
+       {
+        "name": "GIT_OPTIONAL_LOCKS",
+        "value": "0"
+       },
+       {
+        "name": "GIT_CONFIG_PARAMETERS",
+        "value": "'safe.directory=/cmcode'"
+       },
+       {
+        "name": "HOME",
+        "value": "/scratch"
+       },
+       {
+        "name": "TMPDIR",
+        "value": "/scratch"
+       },
+       {
+        "name": "XDG_CACHE_HOME",
+        "value": "/scratch/cache"
+       },
+       {
+        "name": "WANDB_MODE",
+        "value": "offline"
+       },
+       {
+        "name": "WANDB_PROJECT",
+        "value": "bnjettag-chang-bitlinear"
+       },
+       {
+        "name": "WANDB_RUN_GROUP",
+        "value": "chang-bitlinear-20261016"
+       },
+       {
+        "name": "WANDB_CACHE_DIR",
+        "value": "/scratch/wandb-cache"
+       },
+       {
+        "name": "XLA_PYTHON_CLIENT_PREALLOCATE",
+        "value": "false"
+       },
+       {
+        "name": "XLA_FLAGS",
+        "value": ""
+       },
+       {
+        "name": "CBL_JOB",
+        "value": "kai-cbl1016-u1-draw-record-a1"
+       },
+       {
+        "name": "CBL_POD",
+        "valueFrom": {
+         "fieldRef": {
+          "fieldPath": "metadata.name"
+         }
+        }
+       },
+       {
+        "name": "CBL_NODE",
+        "valueFrom": {
+         "fieldRef": {
+          "fieldPath": "spec.nodeName"
+         }
+        }
+       }
+      ],
+      "image": "buildpack-deps@sha256:17923645546d74acef88727bce62c23bbaed953fc7097c41a8b777bba3ca98de",
+      "name": "pack",
+      "resources": {
+       "limits": {
+        "cpu": "4",
+        "ephemeral-storage": "4Gi",
+        "memory": "16Gi",
+        "nvidia.com/gpu": "1"
+       },
+       "requests": {
+        "cpu": "4",
+        "ephemeral-storage": "4Gi",
+        "memory": "16Gi",
+        "nvidia.com/gpu": "1"
+       }
+      },
+      "volumeMounts": [
+       {
+        "mountPath": "/data",
+        "name": "data"
+       },
+       {
+        "mountPath": "/scratch",
+        "name": "scratch"
+       }
+      ],
+      "workingDir": "/cmcode"
+     }
+    ],
+    "nodeSelector": {
+     "kubernetes.io/arch": "amd64"
+    },
+    "restartPolicy": "Never",
+    "terminationGracePeriodSeconds": 60,
+    "volumes": [
+     {
+      "name": "data",
+      "persistentVolumeClaim": {
+       "claimName": "kai-data"
+      }
+     },
+     {
+      "emptyDir": {
+       "sizeLimit": "4Gi"
+      },
+      "name": "scratch"
+     }
+    ]
+   }
+  },
+  "ttlSecondsAfterFinished": 604800
+ }
+}

@@ -1,0 +1,350 @@
+{
+ "schema": 1,
+ "about": "Classification of every hunk of a cited file in the diff of the HGQ2 snapshot (new side) against installed hgq2 0.1.9 (old side). Kinds: behavioral (code present in both behaves differently), addition (snapshot-only code or names; code present in both is unchanged under its defaults), cosmetic (no runtime effect of its own: a comment, or an import used only by another hunk). in_study: whether STUDY v0.8 section 7.3 or chang review v0.3 C16-C18 names the difference. Hunk ids are content hashes from cbl/refdiff.py. Written in batch B1 after reading each hunk in the Mac copy of 0.1.9 (~/lab/venvs/mhab1012-k314, listing sha256 b38e2cc5..., equal to env/training/hgq2-0.1.9-installed-files.sha256).",
+ "hunks": [
+  {
+   "file": "hgq/config/layer.py",
+   "id": "1da22e836cff2d33",
+   "kind": "addition",
+   "mechanism": "layer config flag enable_sq",
+   "note": "the snapshot adds the field enable_sq to GlobalConfig; 0.1.9 has no such flag and no code reads it",
+   "in_study": true
+  },
+  {
+   "file": "hgq/config/layer.py",
+   "id": "d2602af9e094c67d",
+   "kind": "addition",
+   "mechanism": "layer config flag enable_sq",
+   "note": "the snapshot gives enable_sq the global default True",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/__init__.py",
+   "id": "10824a55b046bb06",
+   "kind": "addition",
+   "mechanism": "shim 2: exports of hgq.layers",
+   "note": "the snapshot imports QLinformerAttentionT and QMultiHeadAttentionT into hgq.layers; 0.1.9 imports QLinformerAttention and QMultiHeadAttention only, which is why model.py:13 needs shim 2",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/__init__.py",
+   "id": "8444cb8e6eff7e6f",
+   "kind": "addition",
+   "mechanism": "exports of hgq.layers (SNN layers)",
+   "note": "the snapshot imports QLIF, QLIFCell, QSimpleSNN, QSimpleSNNCell from layers/snn/, which 0.1.9 does not have; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/__init__.py",
+   "id": "4a754f04cb2198c5",
+   "kind": "addition",
+   "mechanism": "exports of hgq.layers (table layers)",
+   "note": "the snapshot also imports QEinsumDenseT from layers/table/; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/__init__.py",
+   "id": "9f0face64f83e2a4",
+   "kind": "addition",
+   "mechanism": "shim 2: exports of hgq.layers",
+   "note": "__all__ gains QLinformerAttentionT",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/__init__.py",
+   "id": "7aef40131c932d28",
+   "kind": "addition",
+   "mechanism": "exports of hgq.layers (QMultiHeadAttentionT)",
+   "note": "__all__ gains QMultiHeadAttentionT, the class section 7.3 says the snapshot adds to mha.py",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/__init__.py",
+   "id": "8456002a070f681a",
+   "kind": "addition",
+   "mechanism": "exports of hgq.layers (SNN layers)",
+   "note": "__all__ gains the four SNN names; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/__init__.py",
+   "id": "dd0deabc2338633b",
+   "kind": "addition",
+   "mechanism": "exports of hgq.layers (table layers)",
+   "note": "__all__ gains QEinsumDenseT; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/attn/__init__.py",
+   "id": "abd41e9de7bc3071",
+   "kind": "addition",
+   "mechanism": "shim 2: exports of hgq.layers.attn",
+   "note": "the snapshot imports QLinformerAttentionT and QMultiHeadAttentionT into hgq.layers.attn, the path by which hgq.layers gets them",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/attn/__init__.py",
+   "id": "2d7868ee3d8e381c",
+   "kind": "addition",
+   "mechanism": "shim 2: exports of hgq.layers.attn",
+   "note": "__all__ gains QLinformerAttentionT",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/attn/__init__.py",
+   "id": "e2bc5a2144bdee21",
+   "kind": "addition",
+   "mechanism": "exports of hgq.layers.attn (QMultiHeadAttentionT)",
+   "note": "__all__ gains QMultiHeadAttentionT",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/attn/linformer.py",
+   "id": "4dedb860b3fbaf98",
+   "kind": "addition",
+   "mechanism": "shim 2: QLinformerAttentionT",
+   "note": "the import of QMultiHeadAttentionT that the snapshot-only QLinformerAttentionT needs",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/attn/linformer.py",
+   "id": "a726025643120328",
+   "kind": "addition",
+   "mechanism": "QLinformerAttention option lin_kv_proj_mode",
+   "note": "the snapshot adds the keyword lin_kv_proj_mode (default \"dense\") to QLinformerAttention.__init__; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/attn/linformer.py",
+   "id": "74e6e7a93ea801c8",
+   "kind": "addition",
+   "mechanism": "QLinformerAttention option lin_kv_proj_mode",
+   "note": "validates the new keyword and passes it on; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/attn/linformer.py",
+   "id": "229907a41139fb4c",
+   "kind": "addition",
+   "mechanism": "QLinformerAttention option lin_kv_proj_mode",
+   "note": "stores the new keyword; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/attn/linformer.py",
+   "id": "c63205abf6859d14",
+   "kind": "addition",
+   "mechanism": "QLinformerAttention option lin_kv_proj_mode",
+   "note": "new helper _make_lin_kv_proj; in the default \"dense\" mode it builds the same QEinsumDense as 0.1.9 (same arguments, no name); \"dense_t\" builds table projections; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/attn/linformer.py",
+   "id": "91f9c120eae0db87",
+   "kind": "addition",
+   "mechanism": "QLinformerAttention option lin_kv_proj_mode",
+   "note": "the key projection is built through the helper; identical construction in \"dense\" mode; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/attn/linformer.py",
+   "id": "52b1bb0d88ac9fd2",
+   "kind": "addition",
+   "mechanism": "QLinformerAttention option lin_kv_proj_mode",
+   "note": "the value projection is built through the helper; identical construction in \"dense\" mode; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/attn/linformer.py",
+   "id": "356a186d620a7f70",
+   "kind": "behavioral",
+   "mechanism": "QLinformerAttention serialization",
+   "note": "get_config gains the key lin_kv_proj_mode (and re-sets qkvo_kq_conf and qkvo_bq_conf, which QMultiHeadAttention.get_config already holds in both versions); a config saved by the snapshot carries a key 0.1.9 does not accept; not used by the xfm graph or any arm",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/attn/linformer.py",
+   "id": "201309d41c8918be",
+   "kind": "addition",
+   "mechanism": "shim 2: QLinformerAttentionT",
+   "note": "the snapshot-only class QLinformerAttentionT (snapshot linformer.py:183) that model.py:13 imports and only get_llformer uses; the fork binds a raising placeholder instead",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/attn/mha.py",
+   "id": "fdd0091f7fe5ff0b",
+   "kind": "addition",
+   "mechanism": "QMultiHeadAttentionT (snapshot only)",
+   "note": "import keras, used only by the added class",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/attn/mha.py",
+   "id": "a3883bd4026f9990",
+   "kind": "addition",
+   "mechanism": "QMultiHeadAttentionT (snapshot only)",
+   "note": "import register_keras_serializable, used only by the added class",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/attn/mha.py",
+   "id": "415ad5905fcb8952",
+   "kind": "addition",
+   "mechanism": "QMultiHeadAttentionT (snapshot only)",
+   "note": "import QEinsumDenseT from layers/table, used only by the added class; this shifts every later line of mha.py by +3 against 0.1.9 (chang review C17: installed lines = snapshot lines - 3 from line 17)",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/attn/mha.py",
+   "id": "7b9fd50d95ad7965",
+   "kind": "addition",
+   "mechanism": "QMultiHeadAttentionT (snapshot only)",
+   "note": "the snapshot appends class QMultiHeadAttentionT after QMultiHeadAttention; QMultiHeadAttention itself is unchanged",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/core/base.py",
+   "id": "c1482a0aa2fc7785",
+   "kind": "cosmetic",
+   "mechanism": "check_collapsed_weight",
+   "note": "the import of warn, used only by check_collapsed_weight",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/core/base.py",
+   "id": "c14bbab8c4c45002",
+   "kind": "cosmetic",
+   "mechanism": "check_collapsed_weight",
+   "note": "the import of keras, used only by check_collapsed_weight",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/core/base.py",
+   "id": "bf1d39863d716a33",
+   "kind": "behavioral",
+   "mechanism": "check_collapsed_weight after build",
+   "note": "0.1.9 wraps every QLayer class build so that check_collapsed_weight evaluates each q<var> property right after build and warns if the quantized weight distribution collapsed (installed base.py:118-140); the snapshot has no wrapper. Consequence (STUDY section 7.3, section 13 binary gates): a binary layer's qkernel must be computable at the end of build",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/core/base.py",
+   "id": "aeb7e0ff6b9b8eec",
+   "kind": "cosmetic",
+   "mechanism": "QLayerBaseMultiInputs.__init__",
+   "note": "0.1.9 sets a misspelled, never-read attribute _iqs_confs = None; the snapshot drops the line; no effect",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/core/base.py",
+   "id": "5ca6c21c6d95b70e",
+   "kind": "behavioral",
+   "mechanism": "multi-input layers with enable_iq=False",
+   "note": "the snapshot asserts enable_iq in the iq_confs property; in 0.1.9 the property reads _iq_confs, which is unset when enable_iq is False, and raises AttributeError instead; no effect while enable_iq is True, as in every xfm layer",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/core/base.py",
+   "id": "9f862013a92bc1fa",
+   "kind": "behavioral",
+   "mechanism": "multi-input layers with enable_iq=False",
+   "note": "the snapshot returns early from QLayerBaseMultiInputs.build when enable_iq is False; 0.1.9 goes on, reads iq_confs and fails with AttributeError, so in 0.1.9 a multi-input layer (QAdd and the other merges) cannot be built with enable_iq=False; no effect while enable_iq is True, as in every xfm layer",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/core/einsum_dense.py",
+   "id": "40e169c5c938f39d",
+   "kind": "addition",
+   "mechanism": "EBOPs parallelization factor",
+   "note": "the snapshot adds the helper _einsum_free0_size, the number of input positions the kernel is applied to",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/core/einsum_dense.py",
+   "id": "20be08b749b032d6",
+   "kind": "cosmetic",
+   "mechanism": "EBOPs parallelization factor",
+   "note": "the comment \"# not used yet\" on the parallelization_factor keyword is dropped (chang review C16 cites it at installed einsum_dense.py:26)",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/core/einsum_dense.py",
+   "id": "2421f4ed1f1d3de1",
+   "kind": "behavioral",
+   "mechanism": "EBOPs parallelization factor",
+   "note": "the snapshot sets n_parallel at build and replaces the default factor -1 by n_parallel; 0.1.9 keeps parallelization_factor as passed and never reads it",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/core/einsum_dense.py",
+   "id": "94346b8de5b3be2e",
+   "kind": "cosmetic",
+   "mechanism": "QEinsumDense._compute_ebops",
+   "note": "a comment line is dropped",
+   "in_study": false
+  },
+  {
+   "file": "hgq/layers/core/einsum_dense.py",
+   "id": "26e76b5b97a97d76",
+   "kind": "behavioral",
+   "mechanism": "EBOPs parallelization factor",
+   "note": "the snapshot returns ebops * parallelization_factor / n_parallel; 0.1.9 returns ebops (no factor, STUDY section 3.1a). With the default factor the ratio is 1, so the two agree up to the float rounding of x * n / n",
+   "in_study": true
+  },
+  {
+   "file": "hgq/layers/core/einsum_dense.py",
+   "id": "615e81771bb5dc86",
+   "kind": "behavioral",
+   "mechanism": "QEinsumDense serialization",
+   "note": "the snapshot writes parallelization_factor into get_config; 0.1.9 does not, and gather_vars_to_kwargs keeps it out of the base config, so a 0.1.9 reload uses the default -1",
+   "in_study": true
+  },
+  {
+   "file": "hgq/quantizer/quantizer.py",
+   "id": "c410e56a7e499bcf",
+   "kind": "cosmetic",
+   "mechanism": "Quantizer serialization",
+   "note": "the import of serialize_keras_object, used only by the next hunk",
+   "in_study": true
+  },
+  {
+   "file": "hgq/quantizer/quantizer.py",
+   "id": "13a87dbf58301438",
+   "kind": "behavioral",
+   "mechanism": "Quantizer serialization",
+   "note": "Quantizer.get_config stores the QuantizerConfig object itself in 0.1.9 and serialize_keras_object(config) in the snapshot (quantizer.py:64); the saved form of every quantizer differs",
+   "in_study": true
+  },
+  {
+   "file": "hgq/utils/minmax_trace.py",
+   "id": "6ac7652925853878",
+   "kind": "behavioral",
+   "mechanism": "trace_minmax verbose print",
+   "note": "the per-layer EBOPs print runs under \"if verbose\" in 0.1.9 and \"if verbose and record\" in the snapshot; with verbose and no EBOPs-enabled layer 0.1.9 raises ValueError (max of an empty sequence); with any EBOPs-enabled layer, as in xfm, both print the same lines",
+   "in_study": true
+  },
+  {
+   "file": "hgq/utils/sugar/__init__.py",
+   "id": "76675f445dcbe42f",
+   "kind": "addition",
+   "mechanism": "shim 1: StopIf export",
+   "note": "the snapshot imports StopIf into hgq.utils.sugar; 0.1.9 does not, which is why run_train.py:13 needs shim 1",
+   "in_study": true
+  },
+  {
+   "file": "hgq/utils/sugar/__init__.py",
+   "id": "9322d70cb99e73b2",
+   "kind": "addition",
+   "mechanism": "shim 1: StopIf export",
+   "note": "__all__ gains StopIf",
+   "in_study": true
+  },
+  {
+   "file": "hgq/utils/sugar/stop_if.py",
+   "id": "700c2dee64b63052",
+   "kind": "addition",
+   "mechanism": "shim 1: StopIf",
+   "note": "the whole file exists in the snapshot only; the fork vendors it byte-identical as vendor/stop_if.py (ac398006...)",
+   "in_study": true
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "approval_ref": "CBL1016-B18F-U1-DRAWS-ONLY: BRIEF for approval 1, revision 4, mode draw, seeds 1-3, record/smoke archives on one product of record; Kai product choice and flags item 0 ruling before approve command; non-draw engineering needs approval 2; S1 needs approval 3",
+ "archive_kind": "smoke",
+ "deterministic_ops": false,
+ "excluded_nodes": [
+  "nautilus-ext-gpu01.fullerton.edu",
+  "hcc-nrp-shor-c6017.unl.edu"
+ ],
+ "gate_reference": "No scientific gate applies to an initial-tensor draw (no training, no metric, no held-out read). Launch authority: APPROVAL.json (Kai, 2026-10-20T19:18:31Z, brief_sha256 b03b1e530cd2ca5422b8ea3a9ea2cf21bff8d4555b9a22d6209c39f2af2e7e34), BRIEF for approval 1 revision 5, mode draw, seeds 1-3.",
+ "gpu_product": "NVIDIA-GeForce-RTX-4090",
+ "job_attempt": 1,
+ "mem_fraction": 0.5,
+ "mode": "draw",
+ "pack": "u1-draw-smoke",
+ "resources": {
+  "cache_gi": 4,
+  "cpu": 4,
+  "deadline_s": 10800,
+  "memory_gi": 16,
+  "ttl_s": 604800
+ },
+ "resume_every": 1,
+ "schema": 1,
+ "scientific_gate": "cleared",
+ "seeds": [
+  1,
+  2,
+  3
+ ],
+ "single_arm_justification": "U1 initial-tensor draw: one CH-8 draw per seed, run sequentially with one visible GPU like each training pod; there is no training arm and nothing to pack.",
+ "stage": "draw"
+}

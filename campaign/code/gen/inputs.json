@@ -1,0 +1,46 @@
+{
+ "kind": "cbl1016-gen-inputs",
+ "schema": 1,
+ "headline": null,
+ "claim_domain": {
+  "base": "b",
+  "band_rule": "default",
+  "c3r": false,
+  "c3r_level": null
+ },
+ "s4_option": null,
+ "s2_record": null,
+ "item9": "hold",
+ "data_manifest": {
+  "path": "manifests/data-prep-150c.json",
+  "sha256": "686b15db996010cc5eadb7556397488c92ce3b48c2bccdb2a0d947f1011a7f13"
+ },
+ "init_tensors": {
+  "root": null,
+  "platform": null
+ },
+ "smoke_init_tensors": {
+  "root": null,
+  "platform": null
+ },
+ "bench_epochs": null,
+ "param_counts": "manifests/param-counts-g58.json",
+ "provenance": {
+  "headline": "unset: STUDY v0.13 section 3.4 rule v0.4 fixes it after recorded outcomes for both F111 forms; binary arms (including engineering) stay held; CH-8/F000 ramp training is count-independent",
+  "claim_domain": "confirmed by Kai, 2026-10-19T17:13:14Z: (b) without (c), default band rule; whole-D_conf strong form beside; no C3r (decisions.md 2026-10-19 (later, 6))",
+  "s4_option": "unset: Kai, STUDY section 19.2 item 11, after S2 and before any held-out read",
+  "s2_record": "unset: S2 has not run; PID-BEST, GR, BE, BEST-C and PID-BEST-C stay templates",
+  "item9": "hold: STUDY section 10 'Admission' and section 19.2 item 9, the default while Kai's answer is open; cap475 is the 475 GPU-h alternative",
+  "data_manifest": "batch B2, code/manifests/data-prep-150c.json (prepared at fork commit 5aae1502)",
+  "init_tensors": "unset: decision U1, the draws of record run on NRP in B19; root on kai-data is batch B17's layout",
+  "smoke_init_tensors": "unset: the smoke archive's own draws (a smoke draw is never the draw of record, interfaces section 10)",
+  "bench_epochs": "unset: batch B19 (cluster-ops) fixes the benchmark length",
+  "param_counts": "gate G58 at 07c33ba5fcf0 on the PC (preflight/gates/G58/07c33ba5fcf0/pcc/param-counts.json, sha256 b58235ed93e8c766d4d5d50a0943d799412ce3b2be674f9ebc2202cf6f90960e), copied byte for byte into the fork as manifests/param-counts-g58.json in batch B10 (B7-11); its 19 counts equal the 780b3d908ad6 record key for key",
+  "od13": "confirmed by Kai, 2026-10-19T17:13:14Z: learned-width HGQ scale quantizer; BF after the fold; decisions.md 2026-10-19 (later, 6)",
+  "od15": "confirmed by Kai, 2026-10-19T17:13:14Z: three-seed screen without verdicts; fresh-seed S4 confirmation required; decisions.md 2026-10-19 (later, 6)",
+  "od12": "confirmed by Kai, 2026-10-19T17:13:14Z: PID target 350000 in headline H units; native reported beside; decisions.md 2026-10-19 (later, 6)"
+ },
+ "od13": true,
+ "od15": true,
+ "od12": true
+}

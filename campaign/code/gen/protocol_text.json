@@ -1,0 +1,163 @@
+{
+ "kind": "cbl1016-protocol-text",
+ "schema": 1,
+ "copied_from": {
+  "path": "campaigns/2026-10-16-chang-bitlinear/review/snapshots/v0.8/protocol-draft.json",
+  "sha256": "8f48e716333a4ffb5ca9ae36012480bf6a3484aadc55545ecfdb00fd08d302c8",
+  "note": "Prose fields copied verbatim once (batch B12, 2026-10-18). Everything else in the derived protocol is computed from the configs and the data manifest by gen/protocol.py."
+ },
+ "screen": {
+  "purpose": "chang-bitlinear-20261016 STUDY v0.8 draft, funded stage: three-seed screen of Chang's released MHA (N=8) with selectively binarized weights (learned-width scale quantizer) against CH-8 on the validation top-1 versus headline-cost front; held-out read descriptive only. The confirmation stage is the separate object 'confirmation_stage' (claim scope, option A as adopted, claim domain written for options (a) and (b) of STUDY 19.2 item 12; requires Kai's budget approval, his choice of option and his choice of claim domain). Draft for structural checking only; not frozen.",
+  "dataset": {
+   "id": "hls4ml LHC jet 150p (Zenodo 3602260), Chang jsc150 three-feature view",
+   "train_split": "150c-train.h5 view: file-order slots 0-7, NumPy seed-42 shuffle, first 90 percent (558,000 derived)",
+   "validation_split": "150c-train.h5 view: same shuffle, last 10 percent (62,000 derived); selection only",
+   "test_split": "150c-test.h5 = separate 26-file Zenodo validation archive, 260,000 jets (lab ROC-test); sealed until the frozen manifest"
+  },
+  "selection": {
+   "metric": "top-1 accuracy (Q14)",
+   "rule": "STUDY v0.8 section 8: frozen headline-cost (H) front after Chang's filter; step envelope on G = {100k,200k,300k,350k,400k,450k} H; D_screen from CH-8 alone on validation (8.2; empty D_screen gives INCOMPLETE and Kai decides before S3/S4); form rule 8.3; coverage-first BEST 8.4; under option (b) of 19.2 item 12, g* = the smallest g in D_screen such that at every g' in D_screen with g' >= g BEST is feasible in all three screen seeds and its mean paired validation top-1 gain over CH-8 is > 0, frozen in S2 (none gives an empty band); PID selection (8.6): the checkpoint with the highest validation top-1 among those with frozen H <= 350,000 passing Chang's filter, ties as 8.1, never the closest over-budget point; structure record at every frozen checkpoint (8.1): degenerate Q, K, V, O or FFN contraction, binary or HGQ, defined by effect (zero variance over the validation jets after the output quantizer) with route, zero columns by route, zero-width input fractions, per-head softmax zero-width fractions"
+  },
+  "metrics": [
+   {
+    "name": "top-1 accuracy",
+    "split": "held-out ROC-test (150c-test.h5)",
+    "n_source": "heldout_rows",
+    "status": "screen, 3 paired seeds, descriptive; no verdict labels; pre-trace frozen checkpoints"
+   },
+   {
+    "name": "macro-OvR AUC with per-class AUCs",
+    "split": "held-out ROC-test (150c-test.h5)",
+    "n_source": "heldout_rows",
+    "status": "screen, descriptive"
+   },
+   {
+    "name": "validation top-1 accuracy",
+    "split": "validation",
+    "n_source": "n_val",
+    "status": "selection monitor (form, BEST, domain); not quotable as held-out"
+   },
+   {
+    "name": "background rejection 1/eps_B at signal efficiency eps_S = 0.5, per class, one-vs-rest",
+    "split": "held-out ROC-test (150c-test.h5)",
+    "n_source": "heldout_rows",
+    "status": "screen, descriptive working point from the saved predictions after the freeze; never read in selection"
+   }
+  ],
+  "interval_method": "screen: ordinary 95 percent paired t over seeds (df = 2), descriptive only, with sign counts and a paired jet bootstrap beside; per-seed Pareto dominance and 2^3 factorial main effects and interactions descriptive on validation (S2) and held-out (after the freeze); no verdict labels at n = 3. S2 validation outputs for Kai's S4 decision: per option the threshold in observed s_d, the section-6 table power, and the plug-in joint power at BEST's observed per-g validation gains and s_d (section-6 model, rho 0 and 0.9) with the smallest single-allowance power beside, both also with sigma_d set to 6.28 x the observed s_d at each g (upper 95 percent bound of sigma_d/s_d at df = 2), labelled optimistic (selected on these seeds), with the runner-up beside and the count of g with gain <= 0 or BEST infeasible; the same at the pooled sigma-hat_d (two-way arm x seed table of validation top-1 per g over CH-8 and the chosen-form cells, residual df = 2(rows - 1), 16 with nine rows) and its upper chi-square bound; the null selection reference for BEST's gain (median and 95th percentile under zero true gains, simulated with the section 8.3-8.4 rules); the number of distinct checkpoint pairs behind the allowances per seed. Factorial effects also with randomized-block intervals (seed as block, df = 14) and the additive-model cell beside BEST. All descriptive; they enter no rule. Claims only in confirmation_stage.",
+  "stop_rules": [
+   "Chang StopIf: training count < 10,000",
+   "integrity: nonfinite values, corrupt artifacts, data or hash drift, accounting failure stop the affected run",
+   "fail closed before launch: unadopted headline count or one not from the run named by Kai's reading of the Build term (STUDY 19.2 item 5); missing initialization H1/H2/NR readings; failed gate; missing authority; OD-12, OD-13 and OD-15 not each confirmed by Kai individually; no claim domain chosen by Kai (19.2 item 12)",
+   "budget cap 400 GPU-h including 50 reserve; under the 19.2 item 9 default the control slot is held until S2 and controls train in S3; controls are dropped first: under the item-9 default, controls are dropped in the reverse of the section 10 admission order; under tier order, BE, GR, DS-HGQ, W8A8, FP32; factorial cells and 7,000 epochs never cut",
+   "no poor-accuracy early stop"
+  ],
+  "outputs": [
+   "checkpoints and front sidecars (H, other count, NR)",
+   "per-epoch frozen cost and metric logs",
+   "validation and held-out prediction arrays (.npz), pre-trace and post-trace",
+   "cost audits (H1, H2, NR) and initialization readings",
+   "da4ml test table and headline-rule outcome",
+   "csynth and Vivado reports",
+   "per-epoch hash of the fetched mapped batch-index sequence (RNG gate) and the _index_map hash",
+   "structure records at every frozen checkpoint: degenerate layers (binary or HGQ, by effect) and zero columns by route, zero-width input fractions, per-head softmax zero-width fractions; for a degenerate Q, per head, whether Q_t is identical across query positions and whether Q is 0 at every element",
+   "da4ml clean rerun per route version under preflight/da4ml-clean/<da4ml version>/: per-line provenance sidecars (script hashes before and after, versions, KERAS_BACKEND, pip-freeze hash, stage return codes), archive listing, driver and table-script hashes, 44-row table with failed stages marked and hgq4 rows labelled context",
+   "export environment package list with versions and hashes; H-LUT option 0 step outcomes with exception types and the dispatched tracer",
+   "S2 validation outputs: form, BEST, thresholds (option C with option (c) at option B's 1.005 s_d), table power, plug-in joint power and smallest single-allowance power (optimistic) at the observed s_d and at 6.28 x the observed s_d at each g, runner-up, g* and the screen band {g in D_screen : g >= g*}; pooled sigma-hat_d with its chi-square band and the same quantities at it; null selection reference for BEST's gain; distinct checkpoint pairs per seed; factorial block intervals and the additive-model cell",
+   "PREFLIGHT determinism record (not a gate): two identical CH-8 seed-1 runs and one F000 seed-1 run, same initialization and batch order, 20 epochs, on the production GPU product and stack, compared bitwise in weights and in the per-epoch frozen record (the F000 run against both CH-8 runs), from the existing reserve",
+   "diagnosis records (descriptive): the section 8.8 reading table's quantities; per-run event lines (first b = 0 at each binary scale, onset of each degenerate layer, nearest LR restart, lambda segment) for every COLLAPSE run or run with A_ref - A_sq larger than CH-8's on the same seed; A_ref - A_sq minus CH-8's per arm and per g"
+  ]
+ },
+ "claim": {
+  "status": "requires Kai's budget approval beyond the 400 GPU-h cap and his choice of option (STUDY v0.8 section 19.2 item 11); decided after S2 validation outputs and before any held-out read. This object is option A as adopted (seeds 4-8, ramp and PID, 20 arms). Option B: the same four groups on seeds 4-11 (32 arms). Option C: CH-8-C and BEST-C on seeds 4-11, no PID arms (16 arms), C2 alone at alpha = 0.05, or sharing alpha with the ramp point claim C3r under option (c) of 19.2 item 12. The claim domain D_C2 is fixed by Kai before any launch (19.2 item 12): D_band = {g in D_conf : g >= g*} under option (b), the recommended default, or D_conf under option (a). The claim-scope protocol file frozen before any S4 launch is regenerated for the chosen option and claim domain.",
+  "purpose": "chang-bitlinear-20261016 STUDY v0.8 confirmation S4, option A: fresh seeds 4-8 of the validation-selected configuration (BEST, chosen form) and CH-8, ramp and PID; carries the C2 verdict over the claim domain D_C2 and the C3 verdict, and C4 and C6 where their rules apply.",
+  "dataset": {
+   "id": "hls4ml LHC jet 150p (Zenodo 3602260), Chang jsc150 three-feature view",
+   "train_split": "150c-train.h5 view: file-order slots 0-7, NumPy seed-42 shuffle, first 90 percent (558,000 derived)",
+   "validation_split": "150c-train.h5 view: same shuffle, last 10 percent (62,000 derived); selection only",
+   "test_split": "150c-test.h5 = separate 26-file Zenodo validation archive, 260,000 jets (lab ROC-test); sealed until the frozen manifest"
+  },
+  "selection": {
+   "metric": "top-1 accuracy (Q14)",
+   "rule": "STUDY v0.8 section 8.7: per-run step envelope on G in H; D_conf = D_screen intersected with the allowances where CH-8 is feasible in every confirmation seed (empty gives INCOMPLETE); D_C2 = D_band = {g in D_conf : g >= g*} with g* frozen in S2 (option b of 19.2 item 12; empty gives INCOMPLETE (no band)) or D_conf (option a); BEST, form and g* fixed by the screen; PID selection as 8.6 (highest validation top-1 among checkpoints with frozen H <= 350,000 passing Chang's filter, never the closest over-budget point); verdicts resting on a degenerate layer among Q, K, V, O and the FFN contraction, binary or HGQ, defined by effect, are labelled 'with degenerate <layer> (<route>)'"
+  },
+  "metrics": [
+   {
+    "name": "top-1 accuracy",
+    "split": "held-out ROC-test (150c-test.h5)",
+    "n_source": "heldout_rows",
+    "status": "confirmation, 5 fresh paired seeds; verdicts C2/C3; pre-trace frozen checkpoints"
+   },
+   {
+    "name": "macro-OvR AUC with per-class AUCs",
+    "split": "held-out ROC-test (150c-test.h5)",
+    "n_source": "heldout_rows",
+    "status": "descriptive, 5 seeds"
+   },
+   {
+    "name": "validation top-1 accuracy",
+    "split": "validation",
+    "n_source": "n_val",
+    "status": "selection monitor; not quotable as held-out"
+   },
+   {
+    "name": "background rejection 1/eps_B at signal efficiency eps_S = 0.5, per class, one-vs-rest",
+    "split": "held-out ROC-test (150c-test.h5)",
+    "n_source": "heldout_rows",
+    "status": "descriptive working point, 5 seeds; never read in selection"
+   }
+  ],
+  "interval_method": "paired t over seeds (df = n - 1). C2 intersection-union test over D_C2: at every g in D_C2, two-sided interval at level L, lower bound > 0 for ABOVE ON GRID; under option (b) the same test over all of D_conf is reported beside as the nested strong form, adding no alpha. L = 1 - 0.05/2 when C2 shares alpha = 0.05 with C3 (options A, B) or with C3r (option C with option (c)); 0.95 for C2 alone (option C). C3 PID and C3r ramp-350k: same level. Variant offered to Kai under option (c), not the default: when 350,000 is in D_C2, C3r's null implies C2's null, so C3r could be tested at C2's own level with no added alpha (C2 at 0.95 and 0.836 s_d under option C); it applies only if 350,000 is in D_C2, fixed on validation before the held-out read; the pre-registered default remains the Bonferroni split. Descriptive CROSSING/LOCAL labels: simultaneous Bonferroni over 7 contrasts (6 grid + PID) or 6 (option C). C4 firmware dominance (only where C2 is ABOVE ON GRID): per g in D_C2 the level-L paired t interval on LUT_BEST - LUT_CH-8 at one part, stage and settings; LUT ADVANTAGE if upper bound < 0, NOT A LUT ADVANTAGE if lower bound >= 0, else UNRESOLVED; supported only with LUT ADVANTAGE and a post-trace accuracy lower bound > 0 at every g in D_C2. C6 (secondary): ordinary 95 percent paired t intervals for the mean ablation, the static-attention ablation (per-(head, query, key) validation-mean probabilities after the softmax output quantizer, the mean accumulated in float64 and cast back) and the zero-logit ablation (logits 0 through the model's own QSoftmax), all > 0; entropy of row-renormalized post-quantizer probabilities < log 8 in every seed (consistency check); no degenerate K, V or O by effect; a degenerate Q gives 'used, with input-independent queries', or 'used, as query-independent attention pooling' where Q_t is identical across query positions; a Q equal to 0 at every element is reported as for a degenerate K ('input-independent attention weights'), with no change to any C6 outcome (its logits are 0, so the static-attention ablation is 0); beside each ablation, the count of validation entries where a downstream datalane WRAP quantizer receives a value outside its (k, i, f) range (O's input quantizer for the static and zero-logit ablations, the second tanh table's input quantizer for the mean ablation), with the unablated model's count as baseline and the label 'overflow-affected' when nonzero, and for the entropy the rows with any negative post-quantizer entry counted separately; the C6 rule is unchanged and a C6 statement resting on an overflow-affected ablation carries the label; reported per g, overall at every g in D_C2.",
+  "stop_rules": [
+   "Chang StopIf: training count < 10,000",
+   "integrity: nonfinite values, corrupt artifacts, data or hash drift, accounting failure stop the affected run",
+   "no launch without Kai's budget approval",
+   "no poor-accuracy early stop",
+   "no launch without Kai's individual confirmation of OD-12, OD-13 and OD-15",
+   "no launch without Kai's claim-domain choice (19.2 item 12)"
+  ],
+  "outputs": [
+   "checkpoints and front sidecars (H, other count, NR)",
+   "per-epoch frozen cost and metric logs",
+   "validation and held-out prediction arrays (.npz), pre-trace and post-trace",
+   "cost audits (H1, H2, NR) and initialization readings",
+   "da4ml test table and headline-rule outcome",
+   "csynth and Vivado reports",
+   "structure records at every frozen checkpoint (degenerate layers by effect with route; softmax zero-width fractions; for a degenerate Q, whether Q_t is identical across query positions and whether Q is 0 at every element)",
+   "paired post-opt LUT table per g with post-trace accuracy (C4)",
+   "attention ablations per g: mean, static and zero-logit ablation intervals, row-renormalized entropy with all-zero-row counts and negative-entry row counts, downstream WRAP overflow counts beside each ablation with the unablated baseline (C6)",
+   "C2 over D_C2 with g* and the allowances below it printed beside; nested whole-D_conf form; per seed, the number of distinct (BEST, CH-8) checkpoint pairs behind the allowances of D_C2"
+  ]
+ },
+ "arms": {
+  "quantization": {
+   "released": "HGQ2 released (Chang xfm builder; float32 matmul override, two import shims, common I/O wrapper)",
+   "F000": "HGQ2 reconstruction, no binary group",
+   "F100": "binary attention Q/K/V/O, per-layer scale through a learned-width HGQ quantizer (forms identical)",
+   "fused": "binary {groups}; {form_text}",
+   "form_text": {
+    "FB": "fold-then-binarize; learned-width scale quantizer per output column at fused-BN sites, per layer elsewhere",
+    "BF": "binarize-then-fold with per-layer beta; learned-width scale quantizer on the folded column magnitude at fused-BN sites, per layer elsewhere"
+   },
+   "group_names": {
+    "attention": "attention",
+    "ffn": "FFN",
+    "head": "head"
+   },
+   "group_joiner": "+",
+   "BEST_screen": "BEST configuration in the chosen form (fixed at S2 on validation)",
+   "BEST_s4": "BEST configuration in the chosen form (fixed at S2 from the screen, before seeds 4-8 exist)",
+   "FP32": "float32, quantizers and cost penalties off",
+   "W8A8": "fixed eight-bit weights and activations, per value, trained steps",
+   "DS-HGQ": "HGQ2 released graph without attention branch and first residual",
+   "GR": "F111 chosen form with the scale derivative (stop_gradient removed from the scale input)",
+   "BE": "F111 chosen form plus a binary embedding with its own scale quantizer"
+  },
+  "cost_control": {
+   "ramp": "released ramp",
+   "none": "none",
+   "pid": "lab BetaPID, target {target_H} H (OD-12 reading), init {init_beta}, frozen-H sensor"
+  },
+  "optimizer": "adam (defaults), cosine restarts {first_decay_steps} epochs"
+ }
+}

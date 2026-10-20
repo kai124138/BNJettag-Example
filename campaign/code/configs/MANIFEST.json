@@ -1,0 +1,3218 @@
+{
+ "campaign": "chang-bitlinear-20261016",
+ "configs": [
+  {
+   "arm_id": "CH-8",
+   "config_id": "CH-8-s1",
+   "label": "CH-8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/CH-8-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "78aa418bc79e6ee47a778a3e5c62de9a6ea7ad7c6cc923cac0141fb748aa7d3b",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8",
+   "config_id": "CH-8-s2",
+   "label": "CH-8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/CH-8-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "068ec312b9168645be74eff40341cc42e87ea5b321c8f36e2af8418bf81b9573",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8",
+   "config_id": "CH-8-s3",
+   "label": "CH-8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/CH-8-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "e40a3803982da9ac9420b027e1ae687334fef87754d8c866c1c7c157ae15d88d",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F000",
+   "config_id": "F000-s1",
+   "label": "F000",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F000-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "81ef8a0f67960386229cd754ff1aa451773759fa133fb86dc018c5fd247daf27",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F000",
+   "config_id": "F000-s2",
+   "label": "F000",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F000-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "dea50cadf265524df57eb9b41dd1c3f174550a690fe2e461e7dc2ff73f07008d",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F000",
+   "config_id": "F000-s3",
+   "label": "F000",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F000-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "f8cc04b453f25b10cb66a14fb9d31c6d9ee598261fd7fbc183c5deecfa00c4e1",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F100",
+   "config_id": "F100-s1",
+   "label": "F100",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F100-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "9e6962472187d2078e38782b1cbec9dccc00fc1d663ce56121c6778df76e1ce8",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F100",
+   "config_id": "F100-s2",
+   "label": "F100",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F100-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "dca87eb3fa0eb29bd3c41dba646e3ef6b49bc2d41058a88718a7f897d45e0a5d",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F100",
+   "config_id": "F100-s3",
+   "label": "F100",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F100-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "c81c353aab535b08c39f0a0fb13d9562a97f7c9fe2175f43ccca90ad386a3e0a",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F001",
+   "config_id": "F001-FB-s1",
+   "label": "F001-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F001-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "681a4f60c10ec2de54ddf682560e38513863006d7289dfa04b9aaadcfa746027",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F001",
+   "config_id": "F001-FB-s2",
+   "label": "F001-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F001-FB-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "f1adcb6cfcdec2a112aabfcab892572bf5d56469d9465f9653a902fb44f2ed74",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F001",
+   "config_id": "F001-FB-s3",
+   "label": "F001-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F001-FB-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "e568aac499ec7d7db1a236fbdba685f4fd0e910da890c5816762253f99740dcf",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F001",
+   "config_id": "F001-BF-s1",
+   "label": "F001-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F001-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "63bd2611c74bbd93ceb981fc59a77b1354aa9551abded3f712afa1b6327c9bb6",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F001",
+   "config_id": "F001-BF-s2",
+   "label": "F001-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F001-BF-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "ab38e71604b50c64ef91ef768225f50ee6e833f02a357f68c5b66706eb8c0653",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F001",
+   "config_id": "F001-BF-s3",
+   "label": "F001-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F001-BF-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "9094ba59df68959236e9865791e5da43a77d2dfcce2c6196462c55c0e4920f77",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F010",
+   "config_id": "F010-FB-s1",
+   "label": "F010-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F010-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "9080c64c625f6222e3d23ad48102aa26a87c33120b40f5ab1389946564a1c540",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F010",
+   "config_id": "F010-FB-s2",
+   "label": "F010-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F010-FB-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "dadc7132ab13aac005588af7eaea7e669602fb7fa932c891695945647b82ba42",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F010",
+   "config_id": "F010-FB-s3",
+   "label": "F010-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F010-FB-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "87a0fbb5cc6f75564d79b20a3f33b31ffd8cd125c56bcb6f42251f89aff84c09",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F010",
+   "config_id": "F010-BF-s1",
+   "label": "F010-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F010-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "07d3fa7ae5a3ae40c1f4a29894066f8eee001e2573cb7d7e87fcee4fed46e0c7",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F010",
+   "config_id": "F010-BF-s2",
+   "label": "F010-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F010-BF-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "9511c302a6890b705a7f033b5e66e9d27888c2842d67f2761671a0ca1ee7b68c",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F010",
+   "config_id": "F010-BF-s3",
+   "label": "F010-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F010-BF-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "8eb1b26e812ea2b0742e6e6948e1a4c9ac2e72cc4525819f63f63b5c677a14c8",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F011",
+   "config_id": "F011-FB-s1",
+   "label": "F011-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F011-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "538a7a89b50d23277872b94c102c13e4719c1601d9515f0bdaa0610ecfb817d1",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F011",
+   "config_id": "F011-FB-s2",
+   "label": "F011-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F011-FB-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "315c2876e3b4ca1b0339f88ac906ea294f3531b97b4878e3c60b2a5fc9765231",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F011",
+   "config_id": "F011-FB-s3",
+   "label": "F011-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F011-FB-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "2a55658e9be602b23c6c704720188af4f9cc197daa59ed06ecf0c90b013328f1",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F011",
+   "config_id": "F011-BF-s1",
+   "label": "F011-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F011-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "314c6959cbf61590df36c86375262fbbcc077355626da28e9f654a6f3eb74c78",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F011",
+   "config_id": "F011-BF-s2",
+   "label": "F011-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F011-BF-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "dbecb40c8d96c93d26f89b0e9c42ec8df5a3f2393a8a142110f178d22ef7db27",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F011",
+   "config_id": "F011-BF-s3",
+   "label": "F011-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F011-BF-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "f0c966c444710e3d42888e5e1d7aea6d6bbcc9fce4cba1eb1efbfcfadd0a9a10",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F101",
+   "config_id": "F101-FB-s1",
+   "label": "F101-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F101-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "f4ecf0bf890b1df44394aa5f59bc4cd5021bbcc143367fbe7c5e4416fad0f20c",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F101",
+   "config_id": "F101-FB-s2",
+   "label": "F101-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F101-FB-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "6c09d2f70c4ddf63442b7775e2fec2cbe23a6f865446b718bf8edfa72ad08cde",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F101",
+   "config_id": "F101-FB-s3",
+   "label": "F101-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F101-FB-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "7423c952ea6d36d8d040749c8e8024dafe92762d700e8cf7724106c8a7fb4ce5",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F101",
+   "config_id": "F101-BF-s1",
+   "label": "F101-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F101-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "a5c77903b2c00ab16c0898564e9decf4b1ecd491e6a1468facee5aa30487bd50",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F101",
+   "config_id": "F101-BF-s2",
+   "label": "F101-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F101-BF-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "62449a9a5cd7c9aa816926b78ffd5605b6f70f517faa37da578827682d1697b5",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F101",
+   "config_id": "F101-BF-s3",
+   "label": "F101-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F101-BF-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "b8eb341d5800ae9fa8221477f93d816174ee7e9dbf9421cbe5f3fb569a866937",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F110",
+   "config_id": "F110-FB-s1",
+   "label": "F110-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F110-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "0dcc785e2dc5c43bab51a29621d535238cdc3f492f777eed8fb49ecb68b4343f",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F110",
+   "config_id": "F110-FB-s2",
+   "label": "F110-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F110-FB-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "2e9cd7138779d3b8a0d642327b42f7b02942dff6ada5bd97c193457788418007",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F110",
+   "config_id": "F110-FB-s3",
+   "label": "F110-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F110-FB-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "4441968ebd0c0fce6e84db824fe91baafe8e25b22c322363b3ca15cb36b445d8",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F110",
+   "config_id": "F110-BF-s1",
+   "label": "F110-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F110-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "8b12a192ad98162dd68371f0fa22d1a08dea45a9d1eeae32f21f0ea0e73022e5",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F110",
+   "config_id": "F110-BF-s2",
+   "label": "F110-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F110-BF-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "7d6f9d13d570f7c0d75c3c834f08b6f91df775e657da6e6b673d16475831c039",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F110",
+   "config_id": "F110-BF-s3",
+   "label": "F110-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F110-BF-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "78e84e612db05616e9c0c4e3c80243dab11196eb362b2b371f88d0081e98fe7c",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F111",
+   "config_id": "F111-FB-s1",
+   "label": "F111-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F111-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "45c7c4bc3b7af01a59e2ff5fd8035b4eec5ad1b652913f55d2bba01b4f9bd2bc",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F111",
+   "config_id": "F111-FB-s2",
+   "label": "F111-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F111-FB-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "232875311800a6519b5505e5d6b9e37025f5ed3d96bf0cd44146e7e2177627a8",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F111",
+   "config_id": "F111-FB-s3",
+   "label": "F111-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F111-FB-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "1a54df3daa027fd13d275385fc4b7413769de61a6781eebc3bde953ffff3e4b6",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F111",
+   "config_id": "F111-BF-s1",
+   "label": "F111-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F111-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "c785a9fa6eb22837b291f9b50f1f2b3f8fc4875ccced6c4709df73b381bc16ef",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F111",
+   "config_id": "F111-BF-s2",
+   "label": "F111-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F111-BF-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "41d364a22c0762fea26fdeacb05fec0061a432c604bc213ac8f87c21d1057278",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F111",
+   "config_id": "F111-BF-s3",
+   "label": "F111-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S1/F111-BF-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "af155afb2baedd173eae413a7e9805df7172792b3618c519cf059aee30886d19",
+   "stage": "S1",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH",
+   "config_id": "PID-CH-s1",
+   "label": "PID-CH",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/PID-CH-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "a5afc914915a1eb31e811acf3652443d7ac61b9f37a785a8d5709d6722884738",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH",
+   "config_id": "PID-CH-s2",
+   "label": "PID-CH",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/PID-CH-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "64eeb1d74469b8a2d6e552b65eea5f701de832671c0dffb860774dc49a280eff",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH",
+   "config_id": "PID-CH-s3",
+   "label": "PID-CH",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/PID-CH-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "1bf046f1646344128d85ea5e33d4f93261e65aaad3e4b4f4fdeec1b78516a11d",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST",
+   "config_id": "PID-BEST-s1",
+   "label": "PID-BEST",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/PID-BEST-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "f5a03e86a23cafc6d9b2dd87e5c40a3ecfe175c22f9f6ee7177515bf7ec4cbb7",
+   "stage": "S3",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST",
+   "config_id": "PID-BEST-s2",
+   "label": "PID-BEST",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/PID-BEST-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "7c3f59e0e4f135c90175e37c96ded46f07df94a10b9647e0d005e27f365fdb6c",
+   "stage": "S3",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST",
+   "config_id": "PID-BEST-s3",
+   "label": "PID-BEST",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/PID-BEST-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "1698a3262c2258f840c2d96e94adebd1ae7040a27dfe5cd24d5cc44a27f9456f",
+   "stage": "S3",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "FP32",
+   "config_id": "FP32-s1",
+   "label": "FP32",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/FP32-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "5dd5c042b6a34c4ec23ddfada3581336bf3758fbb0509d6a5801603397507b6e",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "FP32",
+   "config_id": "FP32-s2",
+   "label": "FP32",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/FP32-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "9cc76c5bf92b1e8d3960350acecc39c11b07cc1595339d330483f08877aa7db2",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "FP32",
+   "config_id": "FP32-s3",
+   "label": "FP32",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/FP32-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "78b2846bad3c60f89fa6ad7a38606e3ed1612d6036452baaf2b44285133ac216",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "W8A8",
+   "config_id": "W8A8-s1",
+   "label": "W8A8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/W8A8-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "7fdf29686fb38d5d9ee280e2716206264dbbdabb9dc8bf08d21bf99946ddbc90",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "W8A8",
+   "config_id": "W8A8-s2",
+   "label": "W8A8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/W8A8-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "264c0ff1820230d1a5d74036408745a3ca916f90d190cbb9e4dafbffaa4e8379",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "W8A8",
+   "config_id": "W8A8-s3",
+   "label": "W8A8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/W8A8-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "052ebca7bf4570a6d6c0b889b49e12563316563f32363f1d8182287f91dd680d",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "DS-HGQ",
+   "config_id": "DS-HGQ-s1",
+   "label": "DS-HGQ",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/DS-HGQ-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "37ee33b8e608b432d7b566d4758ccbe6325b47729e611514f16a92721c7da5ef",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "DS-HGQ",
+   "config_id": "DS-HGQ-s2",
+   "label": "DS-HGQ",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/DS-HGQ-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "486a49d2ad67fffdbed606b5e0e8afe2b036114be3a446ef236d744cbdc44489",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "DS-HGQ",
+   "config_id": "DS-HGQ-s3",
+   "label": "DS-HGQ",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/DS-HGQ-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "51ff5ab78df1e86bb4387a9dbe01518004e21d5bc2abb4ce41bc251396496d54",
+   "stage": "S3",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "GR",
+   "config_id": "GR-s1",
+   "label": "GR",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/GR-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "9b92280b1c2391a491c9cec9ecbc52e5d6a45cae94a6e8210cd89da8a27eb99d",
+   "stage": "S3",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "GR",
+   "config_id": "GR-s2",
+   "label": "GR",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/GR-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "83d53f9a6b66018e1e1bc2c97dc86940f47b9c427bdd5f0a702b16752ba47fe1",
+   "stage": "S3",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "GR",
+   "config_id": "GR-s3",
+   "label": "GR",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/GR-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "b45674d10036baab8a42a923a4d416d97216bc2beda839767142c8eb9b3534a4",
+   "stage": "S3",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BE",
+   "config_id": "BE-s1",
+   "label": "BE",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/BE-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "c0d6460031688cdb3ae5431235f36782bd27dfadaacf6b636f6a87b1530c5579",
+   "stage": "S3",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BE",
+   "config_id": "BE-s2",
+   "label": "BE",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/BE-s2.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 2,
+   "sha256": "7b790113dedd466e3e2924c648b1175cac9c8f4da93cb8198f29ed54bb8827c8",
+   "stage": "S3",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BE",
+   "config_id": "BE-s3",
+   "label": "BE",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S3/BE-s3.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 3,
+   "sha256": "fda2404915b364d1acab58c6edc4bdc271d255a34b95b164b3bb4c9a1f2df0ea",
+   "stage": "S3",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s4",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/CH-8-C-s4.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 4,
+   "sha256": "77d6823ba3aabd7dc1dc301c00e06759bd640c6ac3d834011dc08d19ff3443b7",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s5",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/CH-8-C-s5.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 5,
+   "sha256": "067160ff9d70f0454b68d295d60703e900bcdc2c34aa4bb516f6349767fb7c7f",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s6",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/CH-8-C-s6.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 6,
+   "sha256": "9e6fb12655106eb1afab27e0aff039981106e22ea116102154028cf680410134",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s7",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/CH-8-C-s7.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 7,
+   "sha256": "2bfda8c2c4eb35b3a2b497e68fe5ba6459591feb48d20703acc69af91fc595cb",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s8",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/CH-8-C-s8.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 8,
+   "sha256": "d6348a541c069a2dada58b6c5345b16f81373d571afed56e6d763a4965530e43",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s4",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/BEST-C-s4.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 4,
+   "sha256": "0a8fcbab6fe501ed756576e1710de6aafb4e5b549a05b0692bdd58c128a50987",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s5",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/BEST-C-s5.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 5,
+   "sha256": "0a8ccd95e0221dc0f88380dbb4d81b8baea123daef6f7bd846ebc60e6af89e7a",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s6",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/BEST-C-s6.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 6,
+   "sha256": "8a65bdd4b791bd33f2634c1f59af66630bf4f71fabe79ae56c0cd5e76975a092",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s7",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/BEST-C-s7.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 7,
+   "sha256": "826b77e5d78960f9c855e94ec018b5da00ad5231741b7fc4d936fc028deb34e0",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s8",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/BEST-C-s8.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 8,
+   "sha256": "86a9f577afc99910f5f8f9c5d3e289e0afaf2c2d2e67460f606376b423a4c265",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s4",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/PID-CH-C-s4.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 4,
+   "sha256": "a5603495a8faccb6befbb40fe0c1efc93523d4d410aca655732349171a2a49ae",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s5",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/PID-CH-C-s5.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 5,
+   "sha256": "c1621c54952fc7a9cb02b86d6291f2150a600e857bcf99d16e330597175d06a7",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s6",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/PID-CH-C-s6.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 6,
+   "sha256": "6806d5dcbc42f23c23968b25040d9174fbb862399e052c56f6cf833b2eaca0e7",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s7",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/PID-CH-C-s7.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 7,
+   "sha256": "e7de793edbd53efbdbdcce76ad03f29339e9f89dcc8ba0589d0ffe6957a436c4",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s8",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/PID-CH-C-s8.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 8,
+   "sha256": "b182031b55c4beeb5d4fbb211f4556a20ba4479c6f709825a1167ecbd21036d5",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s4",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/PID-BEST-C-s4.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 4,
+   "sha256": "43ad918927043368488718b7f1c2a08b7b30af2f881bd8fb77cab1f41bee6a0d",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s5",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/PID-BEST-C-s5.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 5,
+   "sha256": "07aa736c58f82a290bb5bf26b4735f16c144927322ae70232b09ad7a2574cce2",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s6",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/PID-BEST-C-s6.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 6,
+   "sha256": "96932b17f7fe422dc4000ef9c41622d4ba62bdbfbd3f66ab5e328eef6dbbbd63",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s7",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/PID-BEST-C-s7.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 7,
+   "sha256": "ffef5513d45383edd24c1a681761da8fcfe3473cd7c12befa16dc37b489a5ae6",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s8",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/A/PID-BEST-C-s8.json",
+   "replica": null,
+   "s4_family": "A",
+   "seed": 8,
+   "sha256": "ea47826ef3afaa0901cd7c4dee911f9713f589b35e8f1d3f453e14588eb320ce",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s4",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/CH-8-C-s4.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 4,
+   "sha256": "7d392239a8e298933d8be90279b06a2967da48d4b18aac0774ddf70cde78f4e6",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s5",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/CH-8-C-s5.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 5,
+   "sha256": "fb13866fd04a9769c18828e90fac7be1faa34f30dc8103cd1ca019e444129a77",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s6",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/CH-8-C-s6.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 6,
+   "sha256": "4c26deb5f791e550d67ee0c7ff37fbb6742cea9af0793ed7c021d9b67d100cdb",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s7",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/CH-8-C-s7.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 7,
+   "sha256": "03d02c3c9911bafa0783d4690a47de254b1a1db95b10a93cb4951819e503e26e",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s8",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/CH-8-C-s8.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 8,
+   "sha256": "065ef8e9edd6421fd14fb0f2566afaddc4c9e4480391e7263a75881aa06b5fa6",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s9",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/CH-8-C-s9.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 9,
+   "sha256": "09c5193bf5f38f3c03b6d2b1023d755cc65f573df36505ec4f6577a6d11a82bb",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s10",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/CH-8-C-s10.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 10,
+   "sha256": "7fc1121ee328dddbba689f7c6485c4d6ef2553c93a78b03dc2d0fd328dd1a907",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s11",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/CH-8-C-s11.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 11,
+   "sha256": "f6189e07f4841c2c1b59dea7edeb933205f88d1c26ec1caabe0601da82892ec9",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s4",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/BEST-C-s4.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 4,
+   "sha256": "ff9ee1690b1b63d891d92eb985eb3f4ed88a0e512551ed716de7477c6ea12a4c",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s5",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/BEST-C-s5.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 5,
+   "sha256": "9ecaca81aeea06f039e49d51c05b82ceea2f0bcb4122b721c14ecd2ab4f38274",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s6",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/BEST-C-s6.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 6,
+   "sha256": "0f28a11565424a47c315f900512dd2a7e8f5f27f453f38fe49632a8554fab335",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s7",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/BEST-C-s7.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 7,
+   "sha256": "2831df7788ab25c36c19e26b3a8b9561abb9bf8bdfec9705b4a42727390ad4ee",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s8",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/BEST-C-s8.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 8,
+   "sha256": "a4ff1aea3494c3ab2e35af4b113afa4964aaf3f9ce047c11a86c6ee5519a50ff",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s9",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/BEST-C-s9.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 9,
+   "sha256": "d634d2407ccb745d1b2f6e83c1d1720d8f94693c789184015d8a5fe53400e6bf",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s10",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/BEST-C-s10.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 10,
+   "sha256": "55662142251afc92b980f59413ddabd91f2e8f8c2285902d79477ba9cc3e3b43",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s11",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/BEST-C-s11.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 11,
+   "sha256": "d445f990da9e64c0cbb85d6343a6063ae11a81efcbfa93e71a01057e4c3bbfd3",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s4",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-CH-C-s4.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 4,
+   "sha256": "4e6ef73e7d680ef04e58599ca7f7b6c6f798b64a68be3740a1c617f4134aa237",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s5",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-CH-C-s5.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 5,
+   "sha256": "d88b71b0f50ae9e656bd65601bfabdbb279fb9eb9970796f5810b6fb52a839e8",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s6",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-CH-C-s6.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 6,
+   "sha256": "8d6b03c5fd19704216843737107faa66972ef3da5afa05eda50ea8148ea1fa3a",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s7",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-CH-C-s7.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 7,
+   "sha256": "e8117d8aeccb2f59548c6f079633a8a5fb413ba7858122a9fde407024399f2ca",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s8",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-CH-C-s8.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 8,
+   "sha256": "663cb303c4ab0b42852dbc79e9b8069e01f35732837c42a0bf15995c038b1a38",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s9",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-CH-C-s9.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 9,
+   "sha256": "69dacc30b2452c333cc3cca2c321b60e1390df8a03de3006d906ba329ae28b43",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s10",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-CH-C-s10.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 10,
+   "sha256": "a90ba30fa820a4ce2eefe1825fc54ec4348a91b920039928352fc9a8ecc2bc7e",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH-C",
+   "config_id": "PID-CH-C-s11",
+   "label": "PID-CH-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-CH-C-s11.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 11,
+   "sha256": "d9b4093d72e3e100801af8ac0390800ca2769d647b7514d0f0675ec0a167ef42",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s4",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-BEST-C-s4.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 4,
+   "sha256": "4b896bea61fc2828155eb78318b18c228a8c7a89c95bb3c67eab4e0b1565f48f",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s5",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-BEST-C-s5.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 5,
+   "sha256": "2cf8a4bde772ac0a6bf0eaaa7ab5c7603272f8ee0b1fce0e9b439e9f949cd884",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s6",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-BEST-C-s6.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 6,
+   "sha256": "5bd87529d5a4fb0c907016ead781c9035f4e6d3118e4e12e67779b79f64a255c",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s7",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-BEST-C-s7.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 7,
+   "sha256": "eaeb26e11119d7a8b6059cd5d7b1b4ee8e8afb5f6512f36150f9b01d930943c6",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s8",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-BEST-C-s8.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 8,
+   "sha256": "0deb6514229aeb2c2ecd85ba3ba7d288b6ec03e8f92a715d1f060b95a9a29837",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s9",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-BEST-C-s9.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 9,
+   "sha256": "919371595ad679f6f08afc8c8a4d3845bfdac9b98b9955bb7df98fe720266ce8",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s10",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-BEST-C-s10.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 10,
+   "sha256": "fc705fd86ee1259c91db48b676c3841792dbb1c2d43c8e246d1ef494285a36c1",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST-C",
+   "config_id": "PID-BEST-C-s11",
+   "label": "PID-BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/B/PID-BEST-C-s11.json",
+   "replica": null,
+   "s4_family": "B",
+   "seed": 11,
+   "sha256": "bccaff2359fa9b81569a0bfabff408d2e620ea242f3e95d1e013a2d2db4cd009",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s4",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/CH-8-C-s4.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 4,
+   "sha256": "243e9b8901cbefbbdace1f1b52739527b16cb8f752a622db45645f988e183bf8",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s5",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/CH-8-C-s5.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 5,
+   "sha256": "1120e7f80eb765f8bf221579aea8a559d1ca50381e6f176c894b8eb0bfbeec7c",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s6",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/CH-8-C-s6.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 6,
+   "sha256": "581c8bade7fe5ab895d38617223c4dfc15a6d9c4897f71aa3a019ed6a0135307",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s7",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/CH-8-C-s7.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 7,
+   "sha256": "53c20748a6391021d8f4568be84ed20ce3b8c294309a54f74355c6b7adeb252d",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s8",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/CH-8-C-s8.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 8,
+   "sha256": "caa9270de7fd9aedb1dfe579772565d05eb69e3e7ac5b2caec8cb9a2bd03f819",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s9",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/CH-8-C-s9.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 9,
+   "sha256": "e92351f100e4d60e9e5d8f914f1bf85de211a871ffe32769a989d0d9733bb0ce",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s10",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/CH-8-C-s10.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 10,
+   "sha256": "189b1f0aaf1c10350723249db7729d42890d5c9a57f7b6903562cfb59ec9057c",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8-C",
+   "config_id": "CH-8-C-s11",
+   "label": "CH-8-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/CH-8-C-s11.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 11,
+   "sha256": "3229066c3d9c9907c3111461c36fe806ed716f1f096f2e17944d909af6d599b3",
+   "stage": "S4",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s4",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/BEST-C-s4.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 4,
+   "sha256": "2779d8408d765b7b433881f7ca452093c4384f48d6f576c2e61034c38e1a5dff",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s5",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/BEST-C-s5.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 5,
+   "sha256": "0a4a3dd3d27e1b14db7aac831021d7c09b01767a92fcef240ce163828467f073",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s6",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/BEST-C-s6.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 6,
+   "sha256": "fb2f464e278480837f62c358273f15d4bd06a8b089370cc4c0606d3ed6ce9e90",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s7",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/BEST-C-s7.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 7,
+   "sha256": "eb9336d591766e2a53e8418741c82992efdf778ffe66a60dea355d422c3c2903",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s8",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/BEST-C-s8.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 8,
+   "sha256": "f8e316b83cdb53a73b48574fdf664ecb3abfb8be6c85ab4337e89d4ea5313d87",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s9",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/BEST-C-s9.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 9,
+   "sha256": "af4e9d46a27995173015f70cd35fc4eb5adbfec4b498adc3e27af6ebfd31a35d",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s10",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/BEST-C-s10.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 10,
+   "sha256": "fb89111eec08f120dc78a8bacd02776afc57fc9042a106e862ec2c3a194cbe58",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "BEST-C",
+   "config_id": "BEST-C-s11",
+   "label": "BEST-C",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/S4/C/BEST-C-s11.json",
+   "replica": null,
+   "s4_family": "C",
+   "seed": 11,
+   "sha256": "8e89f081569b5749f82ba36cf27ce3d9987ce4f9a44bf2f16faccf933660f157",
+   "stage": "S4",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "s4_option",
+    "s2_record",
+    "init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "CH-8",
+   "config_id": "CH-8-s1",
+   "label": "CH-8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/CH-8-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "1778f14e4b1dee101db05c5608959fbe8b5ab61679c8a30c78ffaf364a1f9557",
+   "stage": "smoke",
+   "template": null,
+   "unset_inputs": [
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-CH",
+   "config_id": "PID-CH-s1",
+   "label": "PID-CH",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/PID-CH-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "98e9c02bedb665fad6acdded1c5bfc6c500aba7dff7bab329d5718a51bced964",
+   "stage": "smoke",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F000",
+   "config_id": "F000-s1",
+   "label": "F000",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/F000-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "a040ac7530f1d5f1ca9999e68b5ddeeeb9111b596a27f6489d7d3c674964328b",
+   "stage": "smoke",
+   "template": null,
+   "unset_inputs": [
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F100",
+   "config_id": "F100-s1",
+   "label": "F100",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/F100-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "f7c2a33622629d4ccf87f053a3d7f230da079adc7ab9b0ea0f1338590c016edb",
+   "stage": "smoke",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F111",
+   "config_id": "F111-FB-s1",
+   "label": "F111-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/F111-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "d6498d91299371e51c16b61a62f9dd6f2e0140fc19083509d26dd080f4614909",
+   "stage": "smoke",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F111",
+   "config_id": "F111-BF-s1",
+   "label": "F111-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/F111-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "c4a86fb4584060d1489991c04c5c8b07c7a1c0890270e329e2a9255ab87fd946",
+   "stage": "smoke",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST",
+   "config_id": "PID-BEST-F111-FB-s1",
+   "label": "PID-BEST-F111-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/PID-BEST-F111-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "d1557698ea12b0a2a87b5e768e2b249aa044e32ddb0a980ed8bf45ceb0bd48f8",
+   "stage": "smoke",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST",
+   "config_id": "PID-BEST-F111-BF-s1",
+   "label": "PID-BEST-F111-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/PID-BEST-F111-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "9523c6e09b6cb3aaea9341237cd7e85eb78bdb09b8dca9e90df70982bd715a36",
+   "stage": "smoke",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "FP32",
+   "config_id": "FP32-s1",
+   "label": "FP32",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/FP32-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "3f41c82d574f17abb106bdc0ad2a15f089c441f4911508e011126e336fa35f04",
+   "stage": "smoke",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "W8A8",
+   "config_id": "W8A8-s1",
+   "label": "W8A8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/W8A8-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "a6349e7ae585a635c7bdc127ce9e83f92bdc2b183828b1e99c793ee011fd2a03",
+   "stage": "smoke",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "DS-HGQ",
+   "config_id": "DS-HGQ-s1",
+   "label": "DS-HGQ",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/DS-HGQ-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "b339c40bf4727ff486db57374e9c7f711a7d404b956aaf1daaf59fee6f7711e8",
+   "stage": "smoke",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "GR",
+   "config_id": "GR-FB-s1",
+   "label": "GR-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/GR-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "9bcf286898b1047e1fe5df8d90b80b65112104d4ca223f6b796d4c2f81d7fed2",
+   "stage": "smoke",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "GR",
+   "config_id": "GR-BF-s1",
+   "label": "GR-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/GR-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "8bd49042b6820f759ef40f99dcc26d0bec499c45c9fc5330c97e874292b68523",
+   "stage": "smoke",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "BE",
+   "config_id": "BE-FB-s1",
+   "label": "BE-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/BE-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "63e0a031273f29bc877bd3a200097d1c1202684c6cb28d1daabe2ef55b07979e",
+   "stage": "smoke",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "BE",
+   "config_id": "BE-BF-s1",
+   "label": "BE-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/smoke/BE-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "2d0a44c2aa4a6885594672547abeee5d91a79b722bcee8c770ada648ca3089d1",
+   "stage": "smoke",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "smoke_init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8",
+   "config_id": "CH-8-s1",
+   "label": "CH-8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/CH-8-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "c431d76ae684b502bf544fe2920a235c5b41b721bb212d5f979aa6c0a300790a",
+   "stage": "bench",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "PID-CH",
+   "config_id": "PID-CH-s1",
+   "label": "PID-CH",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/PID-CH-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "02ea3cddf8bbac89cc27ef90ebc1a03a81c2c5b2aa6b250dc02df8eb858b4b97",
+   "stage": "bench",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "F000",
+   "config_id": "F000-s1",
+   "label": "F000",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/F000-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "7ddc6ddfb0bf776925ddcc222761cf0fc6b08aa02687f130df22a1c4eeec8aa6",
+   "stage": "bench",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "F100",
+   "config_id": "F100-s1",
+   "label": "F100",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/F100-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "57cb9487c14fa779d06e89f6280c593f9974aa80b63ad066428c49631fbc0b6b",
+   "stage": "bench",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "F111",
+   "config_id": "F111-FB-s1",
+   "label": "F111-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/F111-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "e099208825873bcb9e193b4a0d0cef4104319e7d7a39191e27e5a318bf3c4816",
+   "stage": "bench",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "F111",
+   "config_id": "F111-BF-s1",
+   "label": "F111-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/F111-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "38387ffb01c7eaaec3e79ee8f13ce6296f2eb2049cdf2c088b1853784a98c86d",
+   "stage": "bench",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST",
+   "config_id": "PID-BEST-F111-FB-s1",
+   "label": "PID-BEST-F111-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/PID-BEST-F111-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "1c2e77f0e7e87f10e39b6045d49a1f43d2850d24fd7a0634a40ac2f6c4fc1841",
+   "stage": "bench",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "PID-BEST",
+   "config_id": "PID-BEST-F111-BF-s1",
+   "label": "PID-BEST-F111-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/PID-BEST-F111-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "7e37152a945822fd96769d4047fcae9c10d4839acf6dd3fe170c84f0923a8ce9",
+   "stage": "bench",
+   "template": "BEST",
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "FP32",
+   "config_id": "FP32-s1",
+   "label": "FP32",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/FP32-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "d3e2b42ab4fde743449045d924da2ce9bca57d5b0baed29f7a3192d2a6ee7c3d",
+   "stage": "bench",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "W8A8",
+   "config_id": "W8A8-s1",
+   "label": "W8A8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/W8A8-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "0eb0f6a97b1ebaa6e63ad8f5b43aae28a4746678e1a03591a40e43815b382688",
+   "stage": "bench",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "DS-HGQ",
+   "config_id": "DS-HGQ-s1",
+   "label": "DS-HGQ",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/DS-HGQ-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "8458ab9de8c6de83e911730dbf721a6dc90ce1485805a3877b495d70a40f2bc1",
+   "stage": "bench",
+   "template": null,
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs",
+    "param_counts"
+   ]
+  },
+  {
+   "arm_id": "GR",
+   "config_id": "GR-FB-s1",
+   "label": "GR-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/GR-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "431d7ddffeae88a167cc3abb003ad3216c2bcaa0892883226cc466457993c541",
+   "stage": "bench",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "GR",
+   "config_id": "GR-BF-s1",
+   "label": "GR-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/GR-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "000aad8de4b33773a1e889be87b910e33564fcbefdba578636f86181d4738d70",
+   "stage": "bench",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "BE",
+   "config_id": "BE-FB-s1",
+   "label": "BE-FB",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/BE-FB-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "5656a4634d42e1e5757a324a26639401af524a5cbdc57a9ed2d0a0aa8012b3f1",
+   "stage": "bench",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "BE",
+   "config_id": "BE-BF-s1",
+   "label": "BE-BF",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/bench/BE-BF-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "5fc2d929686b9afd583bdea724fd631c0f8cb02ed2a34bedb7538ddad2c070b3",
+   "stage": "bench",
+   "template": "F111-chosen-form",
+   "unset_inputs": [
+    "headline",
+    "init_tensors",
+    "bench_epochs"
+   ]
+  },
+  {
+   "arm_id": "CH-8",
+   "config_id": "CH-8-s1-r1",
+   "label": "CH-8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/det/CH-8-s1-r1.json",
+   "replica": 1,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "403246107beb947cf6e3f64ef2d108d3ca8b45766d06fca6622d4876eba6ee1b",
+   "stage": "det",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "CH-8",
+   "config_id": "CH-8-s1-r2",
+   "label": "CH-8",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/det/CH-8-s1-r2.json",
+   "replica": 2,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "b65350c88b801e06552edfb99cfccd025aca1aee0da1d38399581e295819b807",
+   "stage": "det",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors"
+   ]
+  },
+  {
+   "arm_id": "F000",
+   "config_id": "F000-s1",
+   "label": "F000",
+   "launch_blocks": [],
+   "launchable_after_handoff": false,
+   "path": "configs/det/F000-s1.json",
+   "replica": null,
+   "s4_family": null,
+   "seed": 1,
+   "sha256": "7b73401f62ff9bf297f8bfc906cee8d2826680aa024e7a0fce964d2f8993f642",
+   "stage": "det",
+   "template": null,
+   "unset_inputs": [
+    "init_tensors"
+   ]
+  }
+ ],
+ "counts": {
+  "S1": 45,
+  "S3": 21,
+  "S4/A": 20,
+  "S4/B": 32,
+  "S4/C": 16,
+  "bench": 15,
+  "det": 3,
+  "smoke": 15
+ },
+ "data_manifest_sha256": "686b15db996010cc5eadb7556397488c92ce3b48c2bccdb2a0d947f1011a7f13",
+ "generator_sources": {
+  "files": {
+   "gen/__init__.py": "895b4568cabc89da1edf079597d645c164521642fafe67fc354eec2772cd8d66",
+   "gen/arms.py": "c79f49e9874ef63eba475ebff95cea40a87d62057018dafe26ef0d8dbc8e611d",
+   "gen/cli.py": "5d537ee3a55561b352ba78f5d1956762eee12146b0f587ce1572c1014150dbed",
+   "gen/configs.py": "813e73c331aa34cbc242af2a5e44eca61718b1e608d2821cdda6d93c2ba00027",
+   "gen/inputs.py": "f91d0c92a0e68af47cf47e4248d713b34442d5311e962566342b1be8961fdfa8",
+   "gen/protocol.py": "1547c3f42222dd7c0a5b0468bb02b222a62a7f55473e0f07e6986a115f5b7b7a",
+   "gen/protocol_text.json": "40da790f30b5c3874f8927d97256eb14e7d38d4d75ed656d33afd021c25909e2",
+   "gen/release.py": "f5945442cd4e48eea4d7a44faf89834636ed0b988ed675ba965da8c7fb21e103"
+  },
+  "sha256": "f19410a9b545a64734be4a0e2060b83f0f88eae36eec73b8b4eacb3fa243cda9"
+ },
+ "inputs_sha256": "730af938b56413682f0cf97eb6ca8c46cc72049cdbb1ebfd7c2b3a5694cd3a75",
+ "kind": "cbl1016-config-manifest",
+ "n_configs": 167,
+ "protocol": {
+  "configs/protocol/claim-A.json": "015ba1b82a6717e2742ce629235a49b21513f7b09f3b613f3de0440ca41774f8",
+  "configs/protocol/claim-B.json": "f4f05f09eca9b745703bf511051955e8a65f858d2d07a87b92e104d93445e358",
+  "configs/protocol/claim-C.json": "579d4068f9044962921bfbb79a9ae9a0dfc255590ed99545865a699b6feb1e8a",
+  "configs/protocol/screen.json": "1f829042313505de28001efac909d15ec3bc4b737f38defefd583c8fe446b158"
+ },
+ "schema": 1,
+ "study_sha256": "e4a6b89e0adbe3ab14b508a24335688fba48db3f801c4d1015812cc9dcd73d8e",
+ "study_version": "v0.15"
+}

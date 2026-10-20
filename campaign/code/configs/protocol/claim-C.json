@@ -1,0 +1,316 @@
+{
+ "version": 1,
+ "status": "requires Kai's budget approval beyond the 400 GPU-h cap and his choice of option (STUDY v0.8 section 19.2 item 11); decided after S2 validation outputs and before any held-out read. This object is option A as adopted (seeds 4-8, ramp and PID, 20 arms). Option B: the same four groups on seeds 4-11 (32 arms). Option C: CH-8-C and BEST-C on seeds 4-11, no PID arms (16 arms), C2 alone at alpha = 0.05, or sharing alpha with the ramp point claim C3r under option (c) of 19.2 item 12. The claim domain D_C2 is fixed by Kai before any launch (19.2 item 12): D_band = {g in D_conf : g >= g*} under option (b), the recommended default, or D_conf under option (a). The claim-scope protocol file frozen before any S4 launch is regenerated for the chosen option and claim domain.",
+ "purpose": "chang-bitlinear-20261016 STUDY v0.8 confirmation S4, option A: fresh seeds 4-8 of the validation-selected configuration (BEST, chosen form) and CH-8, ramp and PID; carries the C2 verdict over the claim domain D_C2 and the C3 verdict, and C4 and C6 where their rules apply.",
+ "scope": "claim",
+ "dataset": {
+  "id": "hls4ml LHC jet 150p (Zenodo 3602260), Chang jsc150 three-feature view",
+  "identity_sha256": "686b15db996010cc5eadb7556397488c92ce3b48c2bccdb2a0d947f1011a7f13",
+  "train_split": "150c-train.h5 view: file-order slots 0-7, NumPy seed-42 shuffle, first 90 percent (558,000 derived)",
+  "validation_split": "150c-train.h5 view: same shuffle, last 10 percent (62,000 derived); selection only",
+  "test_split": "150c-test.h5 = separate 26-file Zenodo validation archive, 260,000 jets (lab ROC-test); sealed until the frozen manifest"
+ },
+ "inputs": {
+  "n_constituents": 8,
+  "features": [
+   "pt",
+   "etarel",
+   "phirel"
+  ]
+ },
+ "arms": [
+  {
+   "name": "CH-8-C-s4",
+   "group": "CH-8-C",
+   "seed": 4,
+   "quantization": "HGQ2 released (Chang xfm builder; float32 matmul override, two import shims, common I/O wrapper)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": []
+  },
+  {
+   "name": "CH-8-C-s5",
+   "group": "CH-8-C",
+   "seed": 5,
+   "quantization": "HGQ2 released (Chang xfm builder; float32 matmul override, two import shims, common I/O wrapper)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": []
+  },
+  {
+   "name": "CH-8-C-s6",
+   "group": "CH-8-C",
+   "seed": 6,
+   "quantization": "HGQ2 released (Chang xfm builder; float32 matmul override, two import shims, common I/O wrapper)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": []
+  },
+  {
+   "name": "CH-8-C-s7",
+   "group": "CH-8-C",
+   "seed": 7,
+   "quantization": "HGQ2 released (Chang xfm builder; float32 matmul override, two import shims, common I/O wrapper)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": []
+  },
+  {
+   "name": "CH-8-C-s8",
+   "group": "CH-8-C",
+   "seed": 8,
+   "quantization": "HGQ2 released (Chang xfm builder; float32 matmul override, two import shims, common I/O wrapper)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": []
+  },
+  {
+   "name": "CH-8-C-s9",
+   "group": "CH-8-C",
+   "seed": 9,
+   "quantization": "HGQ2 released (Chang xfm builder; float32 matmul override, two import shims, common I/O wrapper)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": []
+  },
+  {
+   "name": "CH-8-C-s10",
+   "group": "CH-8-C",
+   "seed": 10,
+   "quantization": "HGQ2 released (Chang xfm builder; float32 matmul override, two import shims, common I/O wrapper)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": []
+  },
+  {
+   "name": "CH-8-C-s11",
+   "group": "CH-8-C",
+   "seed": 11,
+   "quantization": "HGQ2 released (Chang xfm builder; float32 matmul override, two import shims, common I/O wrapper)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": []
+  },
+  {
+   "name": "BEST-C-s4",
+   "group": "BEST-C",
+   "seed": 4,
+   "quantization": "BEST configuration in the chosen form (fixed at S2 from the screen, before seeds 4-8 exist)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": [
+    "quantization"
+   ]
+  },
+  {
+   "name": "BEST-C-s5",
+   "group": "BEST-C",
+   "seed": 5,
+   "quantization": "BEST configuration in the chosen form (fixed at S2 from the screen, before seeds 4-8 exist)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": [
+    "quantization"
+   ]
+  },
+  {
+   "name": "BEST-C-s6",
+   "group": "BEST-C",
+   "seed": 6,
+   "quantization": "BEST configuration in the chosen form (fixed at S2 from the screen, before seeds 4-8 exist)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": [
+    "quantization"
+   ]
+  },
+  {
+   "name": "BEST-C-s7",
+   "group": "BEST-C",
+   "seed": 7,
+   "quantization": "BEST configuration in the chosen form (fixed at S2 from the screen, before seeds 4-8 exist)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": [
+    "quantization"
+   ]
+  },
+  {
+   "name": "BEST-C-s8",
+   "group": "BEST-C",
+   "seed": 8,
+   "quantization": "BEST configuration in the chosen form (fixed at S2 from the screen, before seeds 4-8 exist)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": [
+    "quantization"
+   ]
+  },
+  {
+   "name": "BEST-C-s9",
+   "group": "BEST-C",
+   "seed": 9,
+   "quantization": "BEST configuration in the chosen form (fixed at S2 from the screen, before seeds 4-8 exist)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": [
+    "quantization"
+   ]
+  },
+  {
+   "name": "BEST-C-s10",
+   "group": "BEST-C",
+   "seed": 10,
+   "quantization": "BEST configuration in the chosen form (fixed at S2 from the screen, before seeds 4-8 exist)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": [
+    "quantization"
+   ]
+  },
+  {
+   "name": "BEST-C-s11",
+   "group": "BEST-C",
+   "seed": 11,
+   "quantization": "BEST configuration in the chosen form (fixed at S2 from the screen, before seeds 4-8 exist)",
+   "schedule": {
+    "epochs": 7000,
+    "batch_size": 2790,
+    "optimizer": "adam (defaults), cosine restarts 500 epochs",
+    "learning_rate": 0.003,
+    "cost_control": "released ramp"
+   },
+   "changed_factors": [
+    "quantization"
+   ]
+  }
+ ],
+ "selection": {
+  "split": "validation",
+  "metric": "top-1 accuracy (Q14)",
+  "rule": "STUDY v0.8 section 8.7: per-run step envelope on G in H; D_conf = D_screen intersected with the allowances where CH-8 is feasible in every confirmation seed (empty gives INCOMPLETE); D_C2 = D_band = {g in D_conf : g >= g*} with g* frozen in S2 (option b of 19.2 item 12; empty gives INCOMPLETE (no band)) or D_conf (option a); BEST, form and g* fixed by the screen; PID selection as 8.6 (highest validation top-1 among checkpoints with frozen H <= 350,000 passing Chang's filter, never the closest over-budget point); verdicts resting on a degenerate layer among Q, K, V, O and the FFN contraction, binary or HGQ, defined by effect, are labelled 'with degenerate <layer> (<route>)'",
+  "cost_checkpoint": "selected"
+ },
+ "metrics": [
+  {
+   "name": "top-1 accuracy",
+   "split": "held-out ROC-test (150c-test.h5)",
+   "n": 260000,
+   "status": "confirmation, 5 fresh paired seeds; verdicts C2/C3; pre-trace frozen checkpoints"
+  },
+  {
+   "name": "macro-OvR AUC with per-class AUCs",
+   "split": "held-out ROC-test (150c-test.h5)",
+   "n": 260000,
+   "status": "descriptive, 5 seeds"
+  },
+  {
+   "name": "validation top-1 accuracy",
+   "split": "validation",
+   "n": 62000,
+   "status": "selection monitor; not quotable as held-out"
+  },
+  {
+   "name": "background rejection 1/eps_B at signal efficiency eps_S = 0.5, per class, one-vs-rest",
+   "split": "held-out ROC-test (150c-test.h5)",
+   "n": 260000,
+   "status": "descriptive working point, 5 seeds; never read in selection"
+  }
+ ],
+ "interval_method": "paired t over seeds (df = n - 1). C2 intersection-union test over D_C2: at every g in D_C2, two-sided interval at level L, lower bound > 0 for ABOVE ON GRID; under option (b) the same test over all of D_conf is reported beside as the nested strong form, adding no alpha. L = 1 - 0.05/2 when C2 shares alpha = 0.05 with C3 (options A, B) or with C3r (option C with option (c)); 0.95 for C2 alone (option C). C3 PID and C3r ramp-350k: same level. Variant offered to Kai under option (c), not the default: when 350,000 is in D_C2, C3r's null implies C2's null, so C3r could be tested at C2's own level with no added alpha (C2 at 0.95 and 0.836 s_d under option C); it applies only if 350,000 is in D_C2, fixed on validation before the held-out read; the pre-registered default remains the Bonferroni split. Descriptive CROSSING/LOCAL labels: simultaneous Bonferroni over 7 contrasts (6 grid + PID) or 6 (option C). C4 firmware dominance (only where C2 is ABOVE ON GRID): per g in D_C2 the level-L paired t interval on LUT_BEST - LUT_CH-8 at one part, stage and settings; LUT ADVANTAGE if upper bound < 0, NOT A LUT ADVANTAGE if lower bound >= 0, else UNRESOLVED; supported only with LUT ADVANTAGE and a post-trace accuracy lower bound > 0 at every g in D_C2. C6 (secondary): ordinary 95 percent paired t intervals for the mean ablation, the static-attention ablation (per-(head, query, key) validation-mean probabilities after the softmax output quantizer, the mean accumulated in float64 and cast back) and the zero-logit ablation (logits 0 through the model's own QSoftmax), all > 0; entropy of row-renormalized post-quantizer probabilities < log 8 in every seed (consistency check); no degenerate K, V or O by effect; a degenerate Q gives 'used, with input-independent queries', or 'used, as query-independent attention pooling' where Q_t is identical across query positions; a Q equal to 0 at every element is reported as for a degenerate K ('input-independent attention weights'), with no change to any C6 outcome (its logits are 0, so the static-attention ablation is 0); beside each ablation, the count of validation entries where a downstream datalane WRAP quantizer receives a value outside its (k, i, f) range (O's input quantizer for the static and zero-logit ablations, the second tanh table's input quantizer for the mean ablation), with the unablated model's count as baseline and the label 'overflow-affected' when nonzero, and for the entropy the rows with any negative post-quantizer entry counted separately; the C6 rule is unchanged and a C6 statement resting on an overflow-affected ablation carries the label; reported per g, overall at every g in D_C2.",
+ "stop_rules": [
+  "Chang StopIf: training count < 10,000",
+  "integrity: nonfinite values, corrupt artifacts, data or hash drift, accounting failure stop the affected run",
+  "no launch without Kai's budget approval",
+  "no poor-accuracy early stop",
+  "no launch without Kai's individual confirmation of OD-12, OD-13 and OD-15",
+  "no launch without Kai's claim-domain choice (19.2 item 12)"
+ ],
+ "outputs": [
+  "checkpoints and front sidecars (H, other count, NR)",
+  "per-epoch frozen cost and metric logs",
+  "validation and held-out prediction arrays (.npz), pre-trace and post-trace",
+  "cost audits (H1, H2, NR) and initialization readings",
+  "da4ml test table and headline-rule outcome",
+  "csynth and Vivado reports",
+  "structure records at every frozen checkpoint (degenerate layers by effect with route; softmax zero-width fractions; for a degenerate Q, whether Q_t is identical across query positions and whether Q is 0 at every element)",
+  "paired post-opt LUT table per g with post-trace accuracy (C4)",
+  "attention ablations per g: mean, static and zero-logit ablation intervals, row-renormalized entropy with all-zero-row counts and negative-entry row counts, downstream WRAP overflow counts beside each ablation with the unablated baseline (C6)",
+  "C2 over D_C2 with g* and the allowances below it printed beside; nested whole-D_conf form; per seed, the number of distinct (BEST, CH-8) checkpoint pairs behind the allowances of D_C2"
+ ]
+}

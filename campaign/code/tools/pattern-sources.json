@@ -1,0 +1,50 @@
+{
+ "schema": 1,
+ "reuse": "Conceptual patterns, reimplemented for the current interfaces; no old scientific constants or ConfigMap payload code copied.",
+ "sources": [
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/BRIEF.md",
+   "sha256": "28495325668704fd02903a39a8096618c08348a389cb1fb2b0bed86b70831cd4"
+  },
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/SETUP.md",
+   "sha256": "dd71a42a638002f8c09fdc196d6d2ec2b4a4670fbf54ffd8b02f789f904ec283"
+  },
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/code/run_pack.py",
+   "sha256": "cd80690ed8c9c7b29758bcc8ed4642c95a15e2d00c70817a84322a72f03a03f8"
+  },
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/tools/prepare_pack.py",
+   "sha256": "a343f6033176f524d9e72213beb4b6267155161f6a76ddd3bc9adfbc723a4f8b"
+  },
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/tools/relaunch_mhab.py",
+   "sha256": "3d1788088635393d23950d554cf5e09a7dbffecfa2cc3ffdade02527eb1aee6d"
+  },
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/tools/repair_check_mhab.py",
+   "sha256": "0c509599a38ff74d9f7b5e03e3aa9f0315e80d8561fc4f577be76cf834b45ab8"
+  },
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/tools/evaluate_mhab.py",
+   "sha256": "9007468aae255c95858154c7f4f3e8a44306f8966eab28ea2ca798dca90b37ef"
+  },
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/tools/bench_rates.py",
+   "sha256": "72cc6af2a3d5b4953d16da3a940d7874d0e6f92a0fba2f5c363e2cc5e7b25a8c"
+  },
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/tools/capture_pods.py",
+   "sha256": "bc6fbf90e466bd2f6bf12e4a1b837d4a34c3efdc083a359b6f0595013420e1b0"
+  },
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/tools/fetch_runs.py",
+   "sha256": "d9784135d365c2838f6e60dd4ff361ba533ed0b09e6a73113dab79d6fee17f70"
+  },
+  {
+   "path": "campaigns/2026-10-12-mha-bitnet/tools/README.md",
+   "sha256": "7195ed07e00d78b76efe9eb877cb7d2364bcb0c4e23d0e31eec35ac119649dd2"
+  }
+ ]
+}

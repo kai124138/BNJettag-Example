@@ -1,0 +1,29 @@
+# code-base.txt: provenance of the base files of the chang-bitlinear-20261016 fork (batch B0).
+# Written 2026-10-17 on the Mac from the lab's reference-code/ snapshot as it stood that day.
+#
+# Paths: a fork path is relative to the fork root (campaigns/2026-10-16-chang-bitlinear/code);
+# a source path is relative to the lab root (the directory that holds reference-code/).
+# Each fork file is a byte-for-byte copy of its source. Files under chang/ are never edited.
+#
+# Format: lines starting with '#' are comments; fields are separated by two spaces.
+#   file  <sha256 of the bytes>  <fork path>  <source path>
+#   tree  <tree hash>  <source tree>  files=<number of files listed>
+#
+# Tree hash method (HGQ2 snapshot): walk <source tree> recursively. Keep regular files only
+# (symbolic links and directories are skipped). Exclude every path that has a directory
+# component named __pycache__ and every file whose name ends in .pyc. For each kept file form
+# the line "<sha256 hex of its bytes>  <path relative to the tree, '/' separators>" followed by a
+# single newline. Sort the lines by the relative path, compared as UTF-8 bytes. The tree hash
+# is the sha256 of the concatenation of the sorted lines, encoded as UTF-8. This is the format
+# of preflight/env/lock/hgq2-0.1.9-installed-files.sha256 (sorted by path); here only its sha256
+# is recorded, and gates/g01_base.py recomputes it.
+#
+file  a02743b6ade38e9499498a4ff0743d5fd3c620fe7b6631914083e47229073870  chang/data.py  reference-code/HGQ2-examples/jsc150/data.py
+file  7fcb38b43efc29d06edb8ae8f4e353cd7688970d4729b5efc57e48c942203b3e  chang/model.py  reference-code/HGQ2-examples/jsc150/model.py
+file  bfe36347c12614c6d0aa0f0f1100c5ea4e985179d86628e1e9351a4d643d169a  chang/run_train.py  reference-code/HGQ2-examples/jsc150/run_train.py
+file  e44567100500406bb29cb28d64525f0d1d9985b7c10135af242c089d7431475b  chang/run_test.py  reference-code/HGQ2-examples/jsc150/run_test.py
+file  1c0c4d57ccce63347863ac1e5d4f0d106d6e649d9526d58b059f75c185021c5c  chang/test_utils.py  reference-code/HGQ2-examples/jsc150/test_utils.py
+file  37f37a56b05e22b01b6f63e144b3fd1b17ad481297937ec065674ca5c66a4d80  chang/tools/prepare_data.py  reference-code/HGQ2-examples/jsc150/tools/prepare_data.py
+file  82b20099d36f30952528658fde1bd8f719e5c78e7c92d7f49b72ecbee38ad600  chang/tools/prepare_data.sh  reference-code/HGQ2-examples/jsc150/tools/prepare_data.sh
+file  ac39800657d424ae2b19c897412e1b5971c7e022ea7bcb74960392e6d4a826a3  vendor/stop_if.py  reference-code/HGQ2/src/hgq/utils/sugar/stop_if.py
+tree  e4dc4ba4912cf5d0f9d79ce63169206b979e21180f0fb7da59f6c56d5901c5e8  reference-code/HGQ2/src  files=81

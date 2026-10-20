@@ -1,0 +1,42 @@
+{
+ "approval_ref": "CBL1016-B18F-U1-DRAWS-ONLY: BRIEF for approval 1, revision 4, mode draw, seeds 1-3, record/smoke archives on one product of record; Kai product choice and flags item 0 ruling before approve command; non-draw engineering needs approval 2; S1 needs approval 3",
+ "changes": "Bundle bbc14fe8ff7b6550369211cc729230fbb7d6430e321b378ffd038384a610d212, commit c4dc2a80ca2b8726492f9c49d5de96b3a068f128; immutable per-arm launch copies; infrastructure Job attempt changes no scientific run identity.",
+ "expected_metrics": [
+  {
+   "expectation": "Measured, not predicted; no physics conclusion from PREFLIGHT.",
+   "name": "engineering time, memory, utilization and integrity",
+   "split": "training/validation only; no held-out read"
+  }
+ ],
+ "launch_copies": [],
+ "outputs": [
+  "/data/cbl1016/initial/NVIDIA-GeForce-RTX-4090/smoke",
+  "/data/cbl1016/packs/u1-draw-smoke"
+ ],
+ "purpose": "chang-bitlinear-20261016 draw u1-draw-smoke; engineering until VERIFY",
+ "runs": [
+  {
+   "config_path": "code/manifests/data-prep-150c.json",
+   "name": "CH-8-s1-draw-smoke"
+  },
+  {
+   "config_path": "code/manifests/data-prep-150c.json",
+   "name": "CH-8-s2-draw-smoke"
+  },
+  {
+   "config_path": "code/manifests/data-prep-150c.json",
+   "name": "CH-8-s3-draw-smoke"
+  }
+ ],
+ "scientific_gate": {
+  "reference": "No scientific gate applies to an initial-tensor draw (no training, no metric, no held-out read). Launch authority: APPROVAL.json (Kai, 2026-10-20T19:18:31Z, brief_sha256 b03b1e530cd2ca5422b8ea3a9ea2cf21bff8d4555b9a22d6209c39f2af2e7e34), BRIEF for approval 1 revision 5, mode draw, seeds 1-3.",
+  "status": "cleared"
+ },
+ "stop_rules": [
+  {
+   "action": "existing-runner-guard",
+   "approval_ref": "STUDY v0.10 sections 11, 13; interfaces sections 13, 19",
+   "condition": "runner refusal, integrity stop or pack deadline"
+  }
+ ]
+}

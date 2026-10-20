@@ -1,0 +1,40 @@
+{
+ "archive_kind": "record",
+ "arms": [
+  {
+   "arm_class": "initial-tensors",
+   "config_path": "manifests/data-prep-150c.json",
+   "name": "CH-8-s1-draw-record",
+   "out": "/data/cbl1016/initial/NVIDIA-GeForce-RTX-4090/record",
+   "seed": 1
+  },
+  {
+   "arm_class": "initial-tensors",
+   "config_path": "manifests/data-prep-150c.json",
+   "name": "CH-8-s2-draw-record",
+   "out": "/data/cbl1016/initial/NVIDIA-GeForce-RTX-4090/record",
+   "seed": 2
+  },
+  {
+   "arm_class": "initial-tensors",
+   "config_path": "manifests/data-prep-150c.json",
+   "name": "CH-8-s3-draw-record",
+   "out": "/data/cbl1016/initial/NVIDIA-GeForce-RTX-4090/record",
+   "seed": 3
+  }
+ ],
+ "campaign": "chang-bitlinear-20261016",
+ "code_sha": "c4dc2a80ca2b8726492f9c49d5de96b3a068f128",
+ "deadline_s": 10800,
+ "deterministic_ops": false,
+ "gpu_product": "NVIDIA-GeForce-RTX-4090",
+ "job_attempt": 1,
+ "k": 1,
+ "mem_fraction": 0.5,
+ "mode": "draw",
+ "pack": "u1-draw-record",
+ "resume_every": 1,
+ "schema": 1,
+ "source_bundle": "bbc14fe8ff7b6550369211cc729230fbb7d6430e321b378ffd038384a610d212",
+ "stage": "draw"
+}
